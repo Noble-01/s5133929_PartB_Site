@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <!-- Boostrap -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script>
+         jQuery(document).ready(function($) {
+         $('.rating_stars span.r').hover(function() {
+            // get hovered value
+            var rating = $(this).data('rating');
+            var value = $(this).data('value');
+            $(this).parent().attr('class', '').addClass('rating_stars').addClass('rating_'+rating);
+            highlight_star(value);
+        }, function() {
+            // get hidden field value
+            var rating = $("#rating").val();
+            var value = $("#rating_val").val();
+            $(this).parent().attr('class', '').addClass('rating_stars').addClass('rating_'+rating);
+            highlight_star(value);
+        }).click(function() {
+            // Set hidden field value
+            var value = $(this).data('value');
+            $("#rating_val").val(value);
+
+            var rating = $(this).data('rating');
+            $("#rating").val(rating);
+            
+            highlight_star(value);
+        });
+        
+        var highlight_star = function(rating) {
+            $('.rating_stars span.s').each(function() {
+                var low = $(this).data('low');
+                var high = $(this).data('high');
+                $(this).removeClass('active-high').removeClass('active-low');
+                if (rating >= high) $(this).addClass('active-high');
+                else if (rating == low) $(this).addClass('active-low');
+            });
+        }
+});
+      </script>
+   </head>
+   <body>
+      <header>
+         <!-- NavBar-->
+         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarColor02">
+               <a class="navbar-brand"  href="index.html"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+               <ul class="navbar-nav ">
+                  <li class="nav-item px-5">
+                     <a class="nav-link h3" href="">Food</a>
+                  </li>
+                  <li class="nav-item px-5">
+                     <a class="nav-link  h3"  href="">Submit</a>
+                  </li>
+                  <li class="nav-item px-5">
+                     <a class="nav-link  h3" href="">Contact Us</a>
+                  </li>
+                  <li class="nav-item px-5">
+                     <a class="nav-link h3"  href="">About Us</a>
+                  </li>
+               </ul>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+         </nav>
+      </header>
+      <div class="container">
+         <div class="row">
+            <div class="col-12 ">
+               <div class="testbox">
+                  <form class=" submitForm" action="/">
+                     <div class="row">
+                        <label for = "name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col">
+                           <input  class = "form-control" type="text" name="name" placeholder="First" />
+                         </div> 
+                         <div class="col">
+                           <input  class = "form-control"type="text" name="name" placeholder="Last" />
+                         </div>
+                         <label>Category</label>
+                         <select class="form-control">
+                           <option>Default select</option>
+                         </select>
+                         <label>Upload Image</label>
+                         <input class = "form-control" type="file" id="myfile" name="myfile">
+                         <label>Description</label>
+                         <textarea class = "form-control" rows="4" cols="10" maxlength="200"  placeholder="Meal was eaten?">
+                        </textarea>
+                     </div>
+                     <span class="rating_stars rating_0">
+                        <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                        <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                        <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                        <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                        <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+                                        
+                        <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+                        <span class='r r1' data-rating='1' data-value='1'></span>
+                        <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+                        <span class='r r2' data-rating='2' data-value='2'></span>
+                        <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+                        <span class='r r3' data-rating='3' data-value='3'></span>
+                        <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+                        <span class='r r4' data-rating='4' data-value='4'></span>
+                        <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+                        <span class='r r5' data-rating='5' data-value='5'></span>
+                      </span>
+                      
+                      <div class="values">
+                        <div>
+                          <label>Rating</label><input type="text" id="rating" value="0" />
+                        </div>
+                        <div>
+                          <label>Rating Value</label><input type="text" name="rating" id="rating_val" value="0" />
+                        </div>
+                      </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>
+         <div class = "bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-3 ">
+                     <h5 class="text-uppercase">The Full Enchilada</h5>
+                     <p>Leaders in food multimedia </p>
+                  </div>
+                  <div class="col-3 ">
+                     <h5 class="text-uppercase">Support</h5>
+                     <ul class="list-unstyled">
+                        <li>	
+                           <a href="#!">Contact US</a>	
+                        </li>
+                        <li>	
+                           <a href="#!">About US</a>	
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="col-6 ">
+                     <a href="#" class="fa fa-facebook"></a>
+                     <a href="#" class="fa fa-twitter"></a>
+                     <a href="#" class="fa fa-google"></a>
+                     <a href="#" class="fa fa-linkedin"></a>
+                  </div>
+               </div>
+            </div>
+            <!-- Copyright -->
+            <hr>
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+               <a href="https://google.com/"> theFullEnchilada.com</a>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
