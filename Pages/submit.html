@@ -10,7 +10,41 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+      <script>
+        
+         //initial setup
+         document.addEventListener('DOMContentLoaded', function(){
+             let stars = document.querySelectorAll('.star');
+             stars.forEach(function(star){
+                 star.addEventListener('click', setRating); 
+             });
+             
+             let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+             let target = stars[rating - 1];
+             target.dispatchEvent(new MouseEvent('click'));
+         });
+ 
+         function setRating(ev){
+             let span = ev.currentTarget;
+             let stars = document.querySelectorAll('.star');
+             let match = false;
+             let num = 0;
+             stars.forEach(function(star, index){
+                 if(match){
+                     star.classList.remove('rated');
+                 }else{
+                     star.classList.add('rated');
+                 }
+                 //are we currently looking at the span that was clicked
+                 if(star === span){
+                     match = true;
+                     num = index + 1;
+                 }
+             });
+             document.querySelector('.stars').setAttribute('data-rating', num);
+         }
+         
+     </script>
    </head>
    <body>
       <header>
@@ -64,6 +98,13 @@
                          <label>Description</label>
                          <textarea class = "form-control" rows="4" cols="10" maxlength="200"  placeholder="Meal was eaten?">
                         </textarea>
+                        <div class="stars" data-rating="3">
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                       </div>
                      </div>
                   </form>
                </div>
