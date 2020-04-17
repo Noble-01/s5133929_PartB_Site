@@ -53,13 +53,6 @@ footer{
     color: white;
   }
 
-  .testbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  padding: 20px;
-  }
   .submitForm {
   width: 100%;
   padding: 20px;
