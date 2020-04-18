@@ -5,20 +5,15 @@ footer{
     width: 100%;
 }
 
-.navbar.center .navbar-inner {
-    text-align: center;
-}
-
-.navbar.center .navbar-inner .nav {
-    display:inline-block;
-    float: none;
-}
-
 .logoImage{
     position: relative;
     width:200px;
     height:150px;
-    margin-left: 0em;
+
+}
+.centerStuff{
+  display: flex;
+  justify-content: center;
 }
 .fa {
     padding: 20px;
@@ -86,15 +81,22 @@ footer{
       content: counter(rateme) '/5';
   }
   .navbar-nav {
+    
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: rgb(97, 95, 95);
   }
-  
+  .moveNavItems{
+    position: relative;
+    left:100px;
+  }
   .nav-item {
     float: left;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    margin-right: 10px;
   }
   
   .nav-item a {
@@ -114,7 +116,6 @@ footer{
     position: relative;
     float: right;
     display: flex;
-    margin-top: 10px;
     margin-right: 10px;
   }
   input[type=search], select {
@@ -140,4 +141,8 @@ footer{
   
   input[type=submit]:hover {
     background-color:rgb(141, 35, 35);
+  }
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
   }
