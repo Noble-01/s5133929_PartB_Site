@@ -3,9 +3,9 @@
    <head>
       <meta charset="utf-8">
       <!-- Boostrap -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
       <script>
          //initial setup
          document.addEventListener('DOMContentLoaded', function(){
@@ -67,53 +67,46 @@
             </ul>
          </nav>
       </header>
-      <div class="submitContainer">
-         <div class="row">
- 
-               <form class=" submitForm" action="submit.html" method="POST">
-                  <div class="row">
-                     <label for = "name" >Name</label>
-                        <input   type="text" name="name" id = "name" placeholder="First" />
-                        <input  type="text" name="name" id = "name" placeholder="Last" />
+      <form class=" submitForm" action="submit.html" method="POST">
+         <div class="centerColumn">
+            <div class = "submitFormGroup">
+               <div class="row">
+                  <label>Dish Name</label>
+                  <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" />
+               </div>
+               <div class = "row">
+                  <label for ="submitCategory">Category</label>
+                  <select id = "submitCategory" name = "submitCategory">
+                     <option>Default select</option>
+                  </select>
+               </div>
+               <div class="row">
+                  <label for = "imageUpload">Upload Image:</label>
+                  <input type="file" id="imageUpload" name="imageUpload">
+               </div>
+               <br>
+               <div class="row">
+                  <label for = "rating">Rating of dish:</label>
+                  <div class="stars" id = "rating" name = "rating" data-rating="1">
+                     <span class="star">&nbsp;</span>
+                     <span class="star">&nbsp;</span>
+                     <span class="star">&nbsp;</span>
+                     <span class="star">&nbsp;</span>
+                     <span class="star">&nbsp;</span>
                   </div>
-                  <div class= "row">
-                     <label for ="submitCategory">Category</label>
-                     <div class="col">
-                        <select id = "submitCategory" name = "submitCategory">
-                           <option>Default select</option>
-                        </select>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <label for = "imageUpload" >Upload Image</label>
-                     <div class="col-sm-6">
-                     <input type="file" id="imageUpload" name="imageUpload">
-                     </div>
-                  </div>
-                  <div class="row">
-                     <label for = "rating">Rating of dish:</label>
-                     <div class="col">
-                        <div class="stars" id = "rating" name = "rating" data-rating="1">
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <label for = "submitDescription" >Description</label>
-                     <div class="col">
-                        <textarea name = "submitDescription" id = "submitDescription" rows="4" cols="5" maxlength="200"  placeholder="Meal was eaten?">
-                        </textarea>
-                     </div>
-                  </div>
-                  <button type="submit" class="btn btn-success">Submit</button>
-               </form>
-
+               </div>
+               <br>
+               <label for = "customerName">Name</label>
+               <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." />
+               <div class="row">
+                  <label for = "submitDescription" >Description</label>
+                  <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?">
+                  </textarea>
+               </div>
+               <input type="submit" id = "submitPost">
+            </div>
          </div>
-      </div>
+      </form>
       <footer>
          <div class="row">
             <div class="centerColumn">
