@@ -3,13 +3,9 @@
    <head>
       <meta charset="utf-8">
       <!-- Boostrap -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
       <script>
          //initial setup
          document.addEventListener('DOMContentLoaded', function(){
@@ -48,63 +44,55 @@
    <body>
       <header>
          <!-- NavBar-->
-         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarColor02">
-               <a class="navbar-brand"  href="index.html"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
-               <ul class="navbar-nav ">
-                  <li class="nav-item px-5">
-                     <a class="nav-link h3" href="">Food</a>
+         <nav class="navbar ">
+            <a class="centerStuff" href="index.html"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+            <ul class="navbar-nav ">
+               <div class = "moveNavItems">
+                  <li class="nav-item ">
+                     <a class="nav-link " href="">Food</a>
                   </li>
-                  <li class="nav-item px-5">
-                     <a class="nav-link  h3"  href="">Submit</a>
+                  <li class="nav-item ">
+                     <a class="nav-link  "  href="submit.html">Submit</a>
                   </li>
-                  <li class="nav-item px-5">
-                     <a class="nav-link  h3" href="">Contact Us</a>
+                  <li class="nav-item">
+                     <a class="nav-link " href="">Contact Us</a>
                   </li>
-                  <li class="nav-item px-5">
-                     <a class="nav-link h3"  href="">About Us</a>
+                  <li class="nav-item ">
+                     <a class="nav-link "  href="">About Us</a>
                   </li>
-               </ul>
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+               </div>
+               <li class = "searchBar">
+                  <input  name = "search" type="search" placeholder="Search.." aria-label="Search">
+               </li>
+            </ul>
          </nav>
       </header>
-      <div class="container">
+      <div class="submitContainer">
          <div class="row">
-            <div class="col-12 ">
+ 
                <form class=" submitForm" action="submit.html" method="POST">
-                  <div class="form-group row">
-                     <label for = "name" class="col-sm-2 col-form-label">Name</label>
-                     <div class="col-sm-3">
-                        <input  class = "form-control" type="text" name="name" id = "name" placeholder="First" />
-                     </div>
-                     <div class="col-sm-3">
-                        <input  class = "form-control"type="text" name="name" id = "name" placeholder="Last" />
-                     </div>
+                  <div class="row">
+                     <label for = "name" >Name</label>
+                        <input   type="text" name="name" id = "name" placeholder="First" />
+                        <input  type="text" name="name" id = "name" placeholder="Last" />
                   </div>
-                  <div class= "form-group row">
-                     <label for ="submitCategory"class="col-sm-2 col-form-label">Category</label>
-                     <div class="col-sm-4">
-                        <select id = "submitCategory" name = "submitCategory"class="form-control">
+                  <div class= "row">
+                     <label for ="submitCategory">Category</label>
+                     <div class="col">
+                        <select id = "submitCategory" name = "submitCategory">
                            <option>Default select</option>
                         </select>
                      </div>
                   </div>
-                  <div class="form-group row">
-                     <label for = "imageUpload" class="col-sm-2 col-form-label">Upload Image</label>
+                  <div class="row">
+                     <label for = "imageUpload" >Upload Image</label>
                      <div class="col-sm-6">
-                     <input class = "form-control" type="file" id="imageUpload" name="imageUpload">
+                     <input type="file" id="imageUpload" name="imageUpload">
                      </div>
                   </div>
-                  <div class="form-group row">
-                     <label for = "rating" class ="col-sm-2 col-form-label">Rating of dish:</label>
-                     <div class="col-sm-6">
+                  <div class="row">
+                     <label for = "rating">Rating of dish:</label>
+                     <div class="col">
                         <div class="stars" id = "rating" name = "rating" data-rating="1">
                            <span class="star">&nbsp;</span>
                            <span class="star">&nbsp;</span>
@@ -114,51 +102,49 @@
                         </div>
                      </div>
                   </div>
-                  <div class="form-group row">
-                     <label for = "submitDescription" class ="col-sm-2 col-form-label">Description</label>
-                     <div class="col-sm-5">
-                        <textarea name = "submitDescription" id = "submitDescription"class = "form-control" rows="4" cols="5" maxlength="200"  placeholder="Meal was eaten?">
+                  <div class="row">
+                     <label for = "submitDescription" >Description</label>
+                     <div class="col">
+                        <textarea name = "submitDescription" id = "submitDescription" rows="4" cols="5" maxlength="200"  placeholder="Meal was eaten?">
                         </textarea>
                      </div>
                   </div>
                   <button type="submit" class="btn btn-success">Submit</button>
                </form>
-            </div>
+
          </div>
       </div>
       <footer>
-         <div class = "bg-light">
-            <div class="container">
-               <div class="row">
-                  <div class="col-3 ">
-                     <h5 class="text-uppercase">The Full Enchilada</h5>
-                     <p>Leaders in food multimedia </p>
-                  </div>
-                  <div class="col-3 ">
-                     <h5 class="text-uppercase">Support</h5>
-                     <ul class="list-unstyled">
-                        <li>	
-                           <a href="#!">Contact US</a>	
-                        </li>
-                        <li>	
-                           <a href="#!">About US</a>	
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="col-6 ">
-                     <a href="#" class="fa fa-facebook"></a>
-                     <a href="#" class="fa fa-twitter"></a>
-                     <a href="#" class="fa fa-google"></a>
-                     <a href="#" class="fa fa-linkedin"></a>
-                  </div>
+         <div class="row">
+            <div class="centerColumn">
+               <div class="footercolumn footerleft">
+                  <h3>The Full Enchilada</h3>
+                  <p>Leaders in food multimedia </p>
+               </div>
+               <div class="footercolumn footermiddle">
+                  <h3 >Support</h3>
+                  <ul class="list-unstyled">
+                     <li>	
+                        <a href="#!">Contact US</a>	
+                     </li>
+                     <li>	
+                        <a href="#!">About US</a>	
+                     </li>
+                  </ul>
+               </div>
+               <div class="footercolumn footerright">
+                  <h3> Social Media:</h3>
+                  <a href="#" class="fa fa-facebook"></a>
+                  <a href="#" class="fa fa-twitter"></a>
+                  <a href="#" class="fa fa-google"></a>
+                  <a href="#" class="fa fa-linkedin"></a>
+                  <!-- Copyright -->
                </div>
             </div>
-            <!-- Copyright -->
-            <hr>
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-               <a href="https://google.com/"> theFullEnchilada.com</a>
-            </div>
          </div>
+         <hr>
+         © 2020 Copyright:
+         <a href="https://google.com/"> theFullEnchilada.com</a>
       </footer>
    </body>
 </html>
