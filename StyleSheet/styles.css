@@ -17,7 +17,7 @@ footer{
   justify-content: center;
 }
 .footercolumn {
-  float: none;
+  float: left;
   width: 33.33%;
 }
 .footerleft {
@@ -204,3 +204,37 @@ footer{
     resize: none;
   }
 
+  .aboutUsBanner{
+    margin-top: 20em;
+    margin: 0 auto;
+    width: 50%;
+    height: 20em;
+    background-color: rgb(97, 95, 95);
+  }
+  .aboutUsBannerHeadings{
+    line-height: 6em;
+    position: relative;
+    padding-top: 3em;
+    text-align: center;
+    margin: 0px;
+  }
+  .aboutUsContent > p{
+    margin: 0;
+    line-height: 1.5em;
+    padding-top: 1.5em;
+  }
+  .aboutUsContent{
+    margin-top: 20em;
+    padding-bottom: 2em;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    background-color: rgb(199, 199, 199);
+  }
+  .aboutUsImage{
+    width: 430px;
+    height: auto;
+    margin: 20px;
+    display: flex;
+    float: left;
+  }
