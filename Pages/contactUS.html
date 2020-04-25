@@ -34,33 +34,57 @@
          </nav>
       </header>
       <div class="container">
-      <div class="main">
-      <div class="contactContainer">
-         <img class = " contactBanner" src="../Images/contactBackground.jpg" alt="bannerImage">
-            <div class="hero-text">
-               <h1 style="font-size:100px">- Hello - </h1>
-               <u><p style="font-size:30px">How can we help you?</p></u>
+         <div class="main">
+            <div class="contactContainer">
+               <img class = " contactBanner" src="../Images/contactBackground.jpg" alt="bannerImage">
+               <div class="hero-text">
+                  <h1 style="font-size:100px">- Hello - </h1>
+                  <u>
+                     <p style="font-size:30px">How can we help you?</p>
+                  </u>
+               </div>
             </div>
+            <div class="centerColumn">
+               <div class=" contactLeft">
 
-      </div>
-      <div class="centerColumn">
-         <div class=" contactLeft">
+                  <p style="font-size: 14px;">197 Onslow Road</p>
+                  <p style="font-size: 14px;">Shenton Park, WA 6008</p>
+                  <p style="font-size: 14px;"> Australia</p>
+                  <p style="font-size: 14px;">Retail & Shop Tel: 0468 858 157</p>
+                  <p style="font-size: 14px;">Email: Enchilada@yahoo.com.au</p>
 
-            <p>I often find myself designing a website where the footer must rest at the bottom of the page, even if the content above it is too short to push it to the bottom of the viewport naturally.</p>
+                  ​
 
-            <p>However, if the content is taller than the user’s viewport, then the footer should disappear from view as it would normally, resting at the bottom of the page (not fixed to the viewport).</p>
-          
-            <p>If you know the height of the footer, then you should set it explicitly, and set the bottom padding of the footer’s parent element to be the same value (or larger if you want some spacing).</p>
-          
+                  <h1 style="font-size: 14px;">Opening Hours:</h1>
+                  <p style="font-size: 14px;">Monday to Friday  -  8am to 5.00pm</p>
+                  <p style="font-size: 14px;"> Saturday - 8am to 1.00pm </p>
+                  <p style="font-size: 14px;"> Closed Sunday & Public Holidays </p>
+
+
+
+               </div>
+               <div class=" contactRight">
+                  <form class = "contactForm" action="contactUS.html" method="POST">
+                     <h1>Question?</h1>
+                     <div class="formcontainer">
+                     <hr/>
+                       <label for="customerName"><strong>Name</strong></label>
+                       <input type="text" placeholder="Enter full name" name="customerName" required>
+                       <label for="contactEmail"><strong>Email</strong></label>
+                       <input type="email" placeholder="Enter email" name="contactEmail" required>
+                       <label for="phone"><strong>Phone Number</strong></label><br><br>
+                       <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required> <br>
+                       <small>Format: 123-45-678</small><br><br>
+                       <label for = "submitDescription" ><strong>Description</strong></label>
+                       <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Question" required></textarea>
+                     <br>
+                     <button class = "contactButton" type="submit">Submit</button>
+                     </div>
+                   </form>
+               </div>
+            </div>
          </div>
-         <div class=" contactRight">
-            <form class=" submitForm" action="submit.html" method="POST">
-  
-            </form>
-         </div>
       </div>
-   </div>
-</div>
       <footer>
          <div class="centerColumn">
             <div class="footerleft">
