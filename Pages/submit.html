@@ -68,49 +68,48 @@
          </nav>
       </header>
       <div class="container">
-      <div class="main">
-      <form class=" submitForm" action="submit.html" method="POST">
-         <div class="centerColumn">
-            <div class = "submitFormGroup">
-               <div class="row">
-                  <label>Dish Name</label>
-                  <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" />
-               </div>
-               <div class = "row">
-                  <label for ="submitCategory">Category</label>
-                  <select id = "submitCategory" name = "submitCategory">
-                     <option>Default select</option>
-                  </select>
-               </div>
-               <div class="row">
-                  <label for = "imageUpload">Upload Image:</label>
-                  <input type="file" id="imageUpload" name="imageUpload">
-               </div>
-               <br>
-               <div class="row">
-                  <label for = "rating">Rating of dish:</label>
-                  <div class="stars" id = "rating" name = "rating" data-rating="1">
-                     <span class="star">&nbsp;</span>
-                     <span class="star">&nbsp;</span>
-                     <span class="star">&nbsp;</span>
-                     <span class="star">&nbsp;</span>
-                     <span class="star">&nbsp;</span>
+         <div class="main">
+            <form class=" submitForm" action="submit.html" method="POST">
+               <div class="centerColumn">
+                  <div class = "submitFormGroup">
+                     <div class="row">
+                        <label>Dish Name</label>
+                        <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" required/>
+                     </div>
+                     <div class = "row">
+                        <label for ="submitCategory">Category</label>
+                        <select id = "submitCategory" name = "submitCategory" required>
+                           <option>Default select</option>
+                        </select>
+                     </div>
+                     <div class="row">
+                        <label for = "imageUpload">Upload Image:</label>
+                        <input type="file" id="imageUpload" name="imageUpload">
+                     </div>
+                     <br>
+                     <div class="row">
+                        <label for = "rating">Rating of dish:</label>
+                        <div class="stars" id = "rating" name = "rating" data-rating="1">
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                        </div>
+                     </div>
+                     <br>
+                     <label for = "customerName">Name</label>
+                     <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." required/>
+                     <div class="row">
+                        <label for = "submitDescription" >Description</label>
+                        <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?" required></textarea>
+                     </div>
+                     <input type="submit" id = "submitPost">
                   </div>
                </div>
-               <br>
-               <label for = "customerName">Name</label>
-               <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." />
-               <div class="row">
-                  <label for = "submitDescription" >Description</label>
-                  <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?">
-                  </textarea>
-               </div>
-               <input type="submit" id = "submitPost">
-            </div>
+            </form>
          </div>
-      </form>
-   </div>
-</div>
+      </div>
       <footer>
          <div class="row">
             <div class="centerColumn">
