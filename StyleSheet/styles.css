@@ -242,6 +242,7 @@ float: left;
     height: 20em;
     background-color: rgb(97, 95, 95);
   }
+
   .aboutUsBannerHeadings{
     line-height: 6em;
     position: relative;
@@ -313,11 +314,9 @@ float: left;
     margin: 24px 50px 12px;
     }
 
-
     .foodRow {
-      display: -ms-flexbox; /* IE10 */
+      justify-content: center;
       display: flex;
-      -ms-flex-wrap: wrap; /* IE10 */
       flex-wrap: wrap;
       padding: 0 4px;
     }
@@ -326,12 +325,17 @@ float: left;
     .foodColumn {
       -ms-flex: 25%; /* IE10 */
       flex: 25%;
-      max-width: 25%;
+      max-width: 20%;
       padding: 0 4px;
+      text-align: center;
     }
     
     .foodColumn img {
       margin-top: 8px;
-      vertical-align: middle;
-      width: 100%;
+      width: 75%;
+    }
+
+    .foodHeader{
+      padding: 32px;
+      text-align: center;
     }
