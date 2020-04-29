@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<?php
+   require_once '..\PHP\query.php';
+   if (isset($_POST['submitPost'])){
+      $customerName = $_POST['customerName'];
+      addCustomer($customerName);
+      $dishName = $_POST['dishName'];
+      $submitCategory = $_POST['submitCategory'];
+      $submitDescription = $_POST['submitDescription'];
+      addPost($customerName,$dishName,$submitCategory,$submitDescription);
+   }
+
+?>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <!-- Boostrap -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
+      <script>
+         //initial setup
+         document.addEventListener('DOMContentLoaded', function(){
+             let stars = document.querySelectorAll('.star');
+             stars.forEach(function(star){
+                 star.addEventListener('click', setRating); 
+             });
+             
+             let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+             let target = stars[rating - 1];
+             target.dispatchEvent(new MouseEvent('click'));
+         });
+         
+         function setRating(ev){
+             let span = ev.currentTarget;
+             let stars = document.querySelectorAll('.star');
+             let match = false;
+             let num = 0;
+             stars.forEach(function(star, index){
+                 if(match){
+                     star.classList.remove('rated');
+                 }else{
+                     star.classList.add('rated');
+                 }
+                 //are we currently looking at the span that was clicked
+                 if(star === span){
+                     match = true;
+                     num = index + 1;
+                 }
+             });
+             document.querySelector('.stars').setAttribute('data-rating', num);
+         }
+         
+      </script>
+   </head>
+   <body>
+      <header>
+         <!-- NavBar-->
+         <nav class="navbar ">
+            <a class="centerStuff" href="index.html"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+            <ul class="navbar-nav ">
+               <div class = "moveNavItems">
+                  <li class="nav-item ">
+                     <a class="nav-link " href="food.html">Food</a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link  "  href="submit.php">Submit</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " href="contactUS.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link "  href="aboutUs.html">About Us</a>
+                  </li>
+               </div>
+               <li class = "searchBar">
+                  <input  name = "search" type="search" placeholder="Search.." aria-label="Search">
+               </li>
+            </ul>
+         </nav>
+      </header>
+      <div class="container">
+         <div class="main">
+            <form class=" submitForm" action="submit.php" method="POST">
+               <div class="centerColumn">
+                  <div class = "submitFormGroup">
+                     <div class="row">
+                        <label>Dish Name</label>
+                        <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" required/>
+                     </div>
+                     <div class = "row">
+                        <label for ="submitCategory">Category</label>
+                        <select id = "submitCategory" name = "submitCategory" required>
+                           <option value = "steak">Steak</option>
+                           <option value = "sushi">Sushi</option>
+                           <option value = "pizza">Pizza</option>
+                           <option value = "enchilada">Enchilada</option>
+                        </select>
+                     </div>
+                     <div class="row">
+                        <label for = "imageUpload">Upload Image:</label>
+                        <input type="file" id="imageUpload" name="imageUpload">
+                     </div>
+                     <br>
+                     <div class="row">
+                        <label for = "rating">Rating of dish:</label>
+                        <div class="stars" id = "rating" name = "rating" data-rating="1">
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                           <span class="star">&nbsp;</span>
+                        </div>
+                     </div>
+                     <br>
+                     <label for = "customerName">Name</label>
+                     <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." required/>
+                     <div class="row">
+                        <label for = "submitDescription" >Description</label>
+                        <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?" required></textarea>
+                     </div>
+                     <input type="submit" id = "submitPost" name = "submitPost">
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <footer>
+         <div class="row">
+            <div class="centerColumn">
+               <div class="footercolumn footerleft">
+                  <h3>The Full Enchilada</h3>
+                  <p>Leaders in food multimedia </p>
+               </div>
+               <div class="footercolumn footermiddle">
+                  <h3 >Support</h3>
+                  <ul class="list-unstyled">
+                     <li>	
+                        <a href="#!">Contact US</a>	
+                     </li>
+                     <li>	
+                        <a href="#!">About US</a>	
+                     </li>
+                  </ul>
+               </div>
+               <div class="footercolumn footerright">
+                  <h3> Social Media:</h3>
+                  <a href="#" class="fa fa-facebook"></a>
+                  <a href="#" class="fa fa-twitter"></a>
+                  <a href="#" class="fa fa-google"></a>
+                  <a href="#" class="fa fa-linkedin"></a>
+                  <!-- Copyright -->
+               </div>
+            </div>
+         </div>
+         <hr>
+         © 2020 Copyright:
+         <a href="https://google.com/"> theFullEnchilada.com</a>
+      </footer>
+   </body>
+</html>

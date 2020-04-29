@@ -4,7 +4,7 @@
    {
       function __construct()
       {
-            $this->open('1621ICT.db');
+            $this->open('..\database\database.db');
       }
    }
 
@@ -36,7 +36,7 @@
    }
    
    
-   function getProducts($searchTerm = null) {
+   function getPosts($searchTerm = null) {
       
       $db = new MyDB();
       if(!$db){
@@ -46,9 +46,9 @@
       }
 
       if(!$searchTerm) {
-         $sql ='SELECT * from PRODUCTS;';
+         $sql ='SELECT * from Post;';
       } else {
-         $sql ='SELECT * FROM PRODUCTS WHERE PRODUCTNAME LIKE "'.$searchTerm.'" OR MANUFACTURER LIKE "'.$searchTerm.'" OR DESCRIPTION LIKE "'.$searchTerm.'" OR PRICE LIKE "'.$searchTerm.'"';
+         $sql ='SELECT * FROM Post WHERE PRODUCTNAME LIKE "'.$searchTerm.'" OR MANUFACTURER LIKE "'.$searchTerm.'" OR DESCRIPTION LIKE "'.$searchTerm.'" OR PRICE LIKE "'.$searchTerm.'"';
       }
       $ret = $db->query($sql);
       $array = [];
@@ -94,7 +94,7 @@
    
    
    
-   function addCustomer($fname, $lname, $address, $phone) {
+   function addCustomer($customerName) {
       
       $db = new MyDB();
       if(!$db){
@@ -102,13 +102,13 @@
       } else {
          //echo "Opened database successfully\n";
       }
-
-      $sql ='INSERT INTO CUSTOMERS (FIRSTNAME, LASTNAME, ADDRESS, PHONE) VALUES ("'.$fname.'", "'.$lname.'", "'.$address.'", "'.$phone.'");';
+      
+      $sql ='INSERT INTO Customer ( NAME) VALUES ("'.$customerName.'");';
       $db->query($sql);
    }
    
    
-   function addProduct($pname, $man, $desc, $price) {
+   function addPost( $customerName,$dishName, $submitCategory, $submitDescription) {
       
       $db = new MyDB();
       if(!$db){
@@ -116,8 +116,8 @@
       } else {
          //echo "Opened database successfully\n";
       }
-
-      $sql ='INSERT INTO PRODUCTS (PRODUCTNAME, MANUFACTURER, DESCRIPTION, PRICE) VALUES ("'.$pname.'", "'.$man.'", "'.$desc.'", "'.$price.'");';
+  
+      $sql ='INSERT INTO Post (DISHNAME, CATEGORY,DISHDESCRIPTION, CID) VALUES ("'.$dishName.'", "'.$submitCategory.'", "'.$submitDescription.'", (SELECT CID FROM Customer WHERE NAME = "'.$customerName.'"));';
       $db->query($sql);
    }
    
