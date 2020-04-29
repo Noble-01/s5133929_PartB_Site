@@ -102,9 +102,17 @@
       } else {
          //echo "Opened database successfully\n";
       }
-      
-      $sql ='INSERT INTO Customer ( NAME) VALUES ("'.$customerName.'");';
-      $db->query($sql);
+      $check = 'SELECT * FROM Customer WHERE NAME = "'.$customerName.'"';
+      $query = $db -> query($check);
+      $i = count(array($query));
+      if ( $i == 1){
+         return;
+      }
+      else{
+         $sql ='INSERT INTO Customer ( NAME) VALUES ("'.$customerName.'");';
+         $db->query($sql);
+      }
+
    }
    
    
