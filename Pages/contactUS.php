@@ -2,13 +2,12 @@
 <?php
    require_once '..\PHP\query.php';
    if (isset($_POST['submitQuestion'])){
-      $customerName = $_POST['customerName'];
+      $customerContactName = $_POST['customerContactName'];
       $contactEmail = $_POST['contactEmail'];
       $subject = $_POST['subject'];
       $questionDescription = $_POST['questionDescription'];
-      addQuestion($customerName,$contactEmail,$subject,$questionDescription);
+      addQuestion($customerContactName,$contactEmail,$subject,$questionDescription);
    }
-
 ?>
 <html>
    <head>
@@ -75,12 +74,12 @@
 
                </div>
                <div class=" contactRight">
-                  <form class = "contactForm" action="contactUS.php" method="POST">
+                  <form class = "contactForm" action="" method="POST">
                      <h1>Question?</h1>
                      <div class="formcontainer">
                      <hr/>
                        <label for="customerName"><strong>Name</strong></label>
-                       <input type="text" placeholder="Enter full name" name="customerName" id = "customerName"required>
+                       <input type="text" placeholder="Enter full name" name="customerContactName" id = "customerContactName"required>
                        <label for="contactEmail"><strong>Email</strong></label>
                        <input type="email" placeholder="Enter email" name="contactEmail" id = "contactEmail" required>
                        <label for="phone"><strong>Subject</strong></label>

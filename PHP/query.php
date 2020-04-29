@@ -102,21 +102,12 @@
       } else {
          //echo "Opened database successfully\n";
       }
-      $check = 'SELECT * FROM Customer WHERE NAME = "'.$customerName.'"';
-      $query = $db -> query($check);
-      echotable
-      echo array($query);
-      $i = count(array($query));
-      if ( $i == 1){
-         echo "Customer already in table";
-         return;
-      }
-      else{
-         $sql ='INSERT INTO Customer ( NAME) VALUES ("'.$customerName.'");';
+         $sql =   'INSERT INTO Customer (NAME) 
+                  SELECT * FROM (SELECT "'.$customerName.'") AS TEMP 
+                  WHERE NOT EXISTS 
+                  ( SELECT NAME FROM Customer WHERE NAME = "'.$customerName.'") 
+                  LIMIT 1 ;';
          $db->query($sql);
-         echo "added new customer";
-      }
-
    }
    
    
@@ -134,7 +125,7 @@
    }
    
    
-   function addQuestion($customerName, $contactEmail, $subject, $questionDescription) {
+   function addQuestion($customerContactName, $contactEmail, $subject, $questionDescription) {
       
       $db = new MyDB();
       if(!$db){
@@ -142,8 +133,23 @@
       } else {
          //echo "Opened database successfully\n";
       }
-
-      $sql ='INSERT INTO Question (SUBJECT, QUESTIONDESCRIPTION, CID) VALUES ("'.$subject.'", "'.$questionDescription.'",  (SELECT CID FROM Customer WHERE NAME = "'.$customerName.'"));';
+      $check = 'SELECT NAME FROM Customer WHERE NAME = "'.$customerContactName.'";';
+      $result = $db -> query($check);
+      if ($result){
+      $sql = 'UPDATE Customer
+               SET EMAIL = "'.$contactEmail.'"
+               WHERE NAME = "'.$customerContactName.'";';
+      $db -> query($sql);
+      }
+      else{
+         $sql =   'INSERT INTO Customer (NAME, EMAIL) 
+         SELECT * FROM (SELECT "'.$customerContactName.'", "'.$contactEmail.'") AS TEMP 
+         WHERE NOT EXISTS 
+         ( SELECT NAME FROM Customer WHERE NAME = "'.$customerContactName.'") 
+         LIMIT 1 ;';
+         $db->query($sql);
+      }
+      $sql ='INSERT INTO Question (SUBJECT, QUESTIONDESCRIPTION, CID) VALUES ("'.$subject.'", "'.$questionDescription.'",  (SELECT CID FROM Customer WHERE NAME = "'.$customerContactName.'"));';
       $db->query($sql);
 
      
