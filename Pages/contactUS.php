@@ -35,34 +35,62 @@
       </header>
       <div class="container">
          <div class="main">
-            <div class = "row">
-               <div class="aboutUsBanner">
-                  <div class="aboutUsBannerHeadings">
-                     <h1> - Our Mission - </h1>
-                     <h3>Connecting food to people</h3>
-                  </div>
+            <div class="contactContainer">
+               <img class = " contactBanner" src="../Images/contactBackground.jpg" alt="bannerImage">
+               <div class="hero-text">
+                  <h1 style="font-size:100px">- Hello - </h1>
+                  <u>
+                     <p style="font-size:30px">How can we help you?</p>
+                  </u>
                </div>
             </div>
-            <div class="row aboutUsContent">
-               <img src="..\Images\aboutUs.jpg" class="aboutUsImage">
-               <p>At Goldbelly, we believe in the emotional power of food. For many of us, food is a language of love. It's more than just nourishment. It's memories, it's connection, it's comfort.
-                  We understand how truly important our mission is. We are here to bring a smile to people’s faces, an edible hug, a connection to a loved one even though you may not be with them, a moment of nostalgic comfort, a craving from a beloved food memory.
-               </p>
-               <p>
-                  We believe that food brings people together, so we've created a place that connects people with their greatest food memories, experiences and desires. We’ve built a platform that empowers small shops, chefs & restaurants and inspires their passion.
-                  Our mission is to bring you comfort through food.
-                  Whatever you dream of. Wherever you are.
-               </p>
+            <div class="centerColumn">
+               <div class=" contactLeft">
+
+                  <p style="font-size: 14px;">197 Onslow Road</p>
+                  <p style="font-size: 14px;">Shenton Park, WA 6008</p>
+                  <p style="font-size: 14px;"> Australia</p>
+                  <p style="font-size: 14px;">Retail & Shop Tel: 0468 858 157</p>
+                  <p style="font-size: 14px;">Email: Enchilada@yahoo.com.au</p>
+
+                  ​
+
+                  <h1 style="font-size: 14px;">Opening Hours:</h1>
+                  <p style="font-size: 14px;">Monday to Friday  -  8am to 5.00pm</p>
+                  <p style="font-size: 14px;"> Saturday - 8am to 1.00pm </p>
+                  <p style="font-size: 14px;"> Closed Sunday & Public Holidays </p>
+
+
+
+               </div>
+               <div class=" contactRight">
+                  <form class = "contactForm" action="contactUS.html" method="POST">
+                     <h1>Question?</h1>
+                     <div class="formcontainer">
+                     <hr/>
+                       <label for="customerName"><strong>Name</strong></label>
+                       <input type="text" placeholder="Enter full name" name="customerName" required>
+                       <label for="contactEmail"><strong>Email</strong></label>
+                       <input type="email" placeholder="Enter email" name="contactEmail" required>
+                       <label for="phone"><strong>Subject</strong></label>
+                       <input type="text" placeholder="Subject of question" name="subject" required>
+                       <label for = "questionDescription" ><strong>Description</strong></label>
+                       <textarea name = "questionDescription" id = "questionDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Question" required></textarea>
+                     <br>
+                     <button class = "contactButton" type="submit">Submit</button>
+                     </div>
+                   </form>
+               </div>
             </div>
          </div>
       </div>
       <footer>
          <div class="centerColumn">
-            <div class="footercolumn footerleft">
+            <div class="footerleft">
                <h3>The Full Enchilada</h3>
                <p>Leaders in food multimedia </p>
             </div>
-            <div class="footercolumn footermiddle">
+            <div class="footermiddle">
                <h3 >Support</h3>
                <ul class="list-unstyled">
                   <li>	
@@ -73,7 +101,7 @@
                   </li>
                </ul>
             </div>
-            <div class="footercolumn footerright">
+            <div class=" footerright">
                <h3> Social Media:</h3>
                <a href="#" class="fa fa-facebook"></a>
                <a href="#" class="fa fa-twitter"></a>

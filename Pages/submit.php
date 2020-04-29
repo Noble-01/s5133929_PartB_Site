@@ -67,7 +67,7 @@
                      <a class="nav-link  "  href="submit.php">Submit</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link " href="contactUS.html">Contact Us</a>
+                     <a class="nav-link " href="contactUS.php">Contact Us</a>
                   </li>
                   <li class="nav-item ">
                      <a class="nav-link "  href="aboutUs.html">About Us</a>
