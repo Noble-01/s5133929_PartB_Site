@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+   require_once '..\PHP\query.php';
+   if (isset($_POST['submitQuestion'])){
+      $customerName = $_POST['customerName'];
+      $contactEmail = $_POST['contactEmail'];
+      $subject = $_POST['subject'];
+      $questionDescription = $_POST['questionDescription'];
+      addQuestion($customerName,$contactEmail,$subject,$questionDescription);
+   }
+
+?>
 <html>
    <head>
       <meta charset="utf-8">
@@ -64,20 +75,20 @@
 
                </div>
                <div class=" contactRight">
-                  <form class = "contactForm" action="contactUS.html" method="POST">
+                  <form class = "contactForm" action="contactUS.php" method="POST">
                      <h1>Question?</h1>
                      <div class="formcontainer">
                      <hr/>
                        <label for="customerName"><strong>Name</strong></label>
-                       <input type="text" placeholder="Enter full name" name="customerName" required>
+                       <input type="text" placeholder="Enter full name" name="customerName" id = "customerName"required>
                        <label for="contactEmail"><strong>Email</strong></label>
-                       <input type="email" placeholder="Enter email" name="contactEmail" required>
+                       <input type="email" placeholder="Enter email" name="contactEmail" id = "contactEmail" required>
                        <label for="phone"><strong>Subject</strong></label>
-                       <input type="text" placeholder="Subject of question" name="subject" required>
+                       <input type="text" placeholder="Subject of question" name="subject" id = "subject"required>
                        <label for = "questionDescription" ><strong>Description</strong></label>
                        <textarea name = "questionDescription" id = "questionDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Question" required></textarea>
                      <br>
-                     <button class = "contactButton" type="submit">Submit</button>
+                     <input type="submit" id = "submitQuestion" name = "submitQuestion">
                      </div>
                    </form>
                </div>
