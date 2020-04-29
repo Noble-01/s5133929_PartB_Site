@@ -8,6 +8,7 @@
       $submitCategory = $_POST['submitCategory'];
       $submitDescription = $_POST['submitDescription'];
       addPost($customerName,$dishName,$submitCategory,$submitDescription);
+
    }
 
 ?>
@@ -81,7 +82,7 @@
       </header>
       <div class="container">
          <div class="main">
-            <form class=" submitForm" action="submit.php" method="POST">
+            <form class=" submitForm" action="" method="POST">
                <div class="centerColumn">
                   <div class = "submitFormGroup">
                      <div class="row">
