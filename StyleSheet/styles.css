@@ -349,6 +349,8 @@ float: left;
       text-decoration: underline;
     }
     .card {
+      margin-left: 1em;
+      margin-right: 1em;
       margin-top: 5em;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
@@ -356,9 +358,16 @@ float: left;
     }
     
     .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
     }
     
     .cardContainer {
       padding: 2px 16px;
+    }
+
+    .foodCards{
+      display: inline-block;
+      justify-content: space-evenly;
+      display: flex;
+      flex-wrap: wrap;
     }

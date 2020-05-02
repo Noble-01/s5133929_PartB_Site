@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+   require_once '..\..\PHP\categoryQueries.php';
+   $request = 'pizza';
+   $posts = getPosts($request);
+?>
 <html>
    <head>
       <meta charset="utf-8">
@@ -35,12 +40,16 @@
       </header>
       <div class="container">
          <div class="main">
+            <div class = "foodCards">
+            <?php foreach ($posts as $post) :?>
             <div class="card">
             <img src="..\..\Images\pizzaFood.jpg" alt="Avatar" style="width:100%">
                <div class="cardContainer">
-                  <h4><b>John Doe</b></h4> 
-                  <p>Architect & Engineer</p> 
+                  <h4><b><?php echo $post['DISHNAME'] ?></b></h4> 
+                  <p><?php echo $post['DISHDESCRIPTION'] ?></p> 
                </div>
+            </div>
+            <?php endforeach; ?>
             </div>
          </div>
       </div>
