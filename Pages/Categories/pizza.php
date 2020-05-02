@@ -35,6 +35,13 @@
       </header>
       <div class="container">
          <div class="main">
+            <div class="card">
+            <img src="..\..\Images\pizzaFood.jpg" alt="Avatar" style="width:100%">
+               <div class="cardContainer">
+                  <h4><b>John Doe</b></h4> 
+                  <p>Architect & Engineer</p> 
+               </div>
+            </div>
          </div>
       </div>
       <footer>
