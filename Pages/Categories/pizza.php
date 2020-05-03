@@ -43,7 +43,15 @@
             <div class = "foodCards">
             <?php foreach ($posts as $post) :?>
             <div class="card">
-            <?php echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>' ?>
+            
+            <?php 
+            if ($post['IMAGE'] == ''){
+               echo '<img width = "100%" src = "..\..\Images\pizzaFood.jpg">';
+            }
+            else{
+               echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>';
+            }
+            ?>
                <div class="cardContainer">
                   <h4><b><?php echo $post['DISHNAME'] ?></b></h4> 
                   <p><?php echo $post['DISHDESCRIPTION'] ?></p> 

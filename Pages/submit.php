@@ -7,9 +7,17 @@
       $dishName = $_POST['dishName'];
       $submitCategory = $_POST['submitCategory'];
       $submitDescription = $_POST['submitDescription'];
-      $file = addslashes($_FILES['image']['tmp_name']);
-      $file = file_get_contents($file);
-      $file = base64_encode($file);
+      
+      if (file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])){
+         $file = addslashes($_FILES['image']['tmp_name']);
+         $file = file_get_contents($file);
+         $file = base64_encode($file);
+         
+      }
+      else{
+         $file = '';
+      }
+      
       addPost($customerName,$dishName,$submitCategory,$file, $submitDescription);
 
    }
