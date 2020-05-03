@@ -7,7 +7,10 @@
       $dishName = $_POST['dishName'];
       $submitCategory = $_POST['submitCategory'];
       $submitDescription = $_POST['submitDescription'];
-      addPost($customerName,$dishName,$submitCategory,$submitDescription);
+      $file = addslashes($_FILES['image']['tmp_name']);
+      $file = file_get_contents($file);
+      $file = base64_encode($file);
+      addPost($customerName,$dishName,$submitCategory,$file, $submitDescription);
 
    }
 
@@ -82,7 +85,7 @@
       </header>
       <div class="container">
          <div class="main">
-            <form class=" submitForm" action="" method="POST">
+            <form class=" submitForm" action="" method="POST" enctype = "multipart/form-data">
                <div class="centerColumn">
                   <div class = "submitFormGroup">
                      <div class="row">
@@ -99,8 +102,8 @@
                         </select>
                      </div>
                      <div class="row">
-                        <label for = "imageUpload">Upload Image:</label>
-                        <input type="file" id="imageUpload" name="imageUpload">
+                        <label for = "image">Upload Image:</label>
+                        <input type="file" id="image" name="image">
                      </div>
                      <br>
                      <div class="row">
@@ -160,3 +163,26 @@
       </footer>
    </body>
 </html>
+
+<script>
+   $(document).ready(function()){
+      $('#submitPost').click(function()){
+         var image_name = $("image").val();
+         if(image_name == '')
+         {
+            alert("please select image");
+            return false;
+         }
+         else
+         {
+            var extension = $('image').val().split('.').pop().toLowerCase();
+            if(jQuery.inArray(extension,['gif','png','jpg','jpeg']) == -1)
+            {
+               alert("invalid image file");
+               $('image').val('');
+               return false;
+            }
+         }
+      });
+   });
+</script>

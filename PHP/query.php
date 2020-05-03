@@ -25,7 +25,7 @@
    }
    
    
-   function addPost( $customerName,$dishName, $submitCategory, $submitDescription) {
+   function addPost( $customerName,$dishName, $submitCategory, $file, $submitDescription) {
       
       $db = new MyDB();
       if(!$db){
@@ -34,7 +34,7 @@
          //echo "Opened database successfully\n";
       }
   
-      $sql ='INSERT INTO Post (DISHNAME, CATEGORY,DISHDESCRIPTION, CID) VALUES ("'.$dishName.'", "'.$submitCategory.'", "'.$submitDescription.'", (SELECT CID FROM Customer WHERE NAME = "'.$customerName.'"));';
+      $sql ='INSERT INTO Post (DISHNAME, CATEGORY,IMAGE,DISHDESCRIPTION, CID) VALUES ("'.$dishName.'", "'.$submitCategory.'", "'.$file.'","'.$submitDescription.'", (SELECT CID FROM Customer WHERE NAME = "'.$customerName.'"));';
       $db->query($sql);
    }
    
