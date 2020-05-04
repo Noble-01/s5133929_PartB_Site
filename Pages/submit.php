@@ -7,7 +7,6 @@
       $dishName = $_POST['dishName'];
       $submitCategory = $_POST['submitCategory'];
       $submitDescription = $_POST['submitDescription'];
-      
       if (file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])){
          $file = addslashes($_FILES['image']['tmp_name']);
          $file = file_get_contents($file);
@@ -17,8 +16,8 @@
       else{
          $file = '';
       }
-      
-      addPost($customerName,$dishName,$submitCategory,$file, $submitDescription);
+      $rating = $_POST['testRating'];
+      addPost($customerName,$dishName,$submitCategory,$file, $rating, $submitDescription);
 
    }
 
@@ -31,6 +30,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
       <script>
+      let rating = 0;
          //initial setup
          document.addEventListener('DOMContentLoaded', function(){
              let stars = document.querySelectorAll('.star');
@@ -58,11 +58,17 @@
                  if(star === span){
                      match = true;
                      num = index + 1;
+                     rating = num;
                  }
              });
              document.querySelector('.stars').setAttribute('data-rating', num);
+
+             //alert(rating)
          }
-         
+         function setValue(){
+            document.submitForm.testRating.value = rating;
+         }
+
       </script>
    </head>
    <body>
@@ -93,7 +99,7 @@
       </header>
       <div class="container">
          <div class="main">
-            <form class=" submitForm" action="" method="POST" enctype = "multipart/form-data">
+            <form class=" submitForm" id = "submitForm" name = "submitForm" action="" method="POST" enctype = "multipart/form-data">
                <div class="centerColumn">
                   <div class = "submitFormGroup">
                      <div class="row">
@@ -116,14 +122,16 @@
                      <br>
                      <div class="row">
                         <label for = "rating">Rating of dish:</label>
+                        
                         <div class="stars" id = "rating" name = "rating" data-rating="1">
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
-                           <span class="star">&nbsp;</span>
+                           <span  class="star">&nbsp;</span>
+                           <span  class="star">&nbsp;</span>
+                           <span  class="star">&nbsp;</span>
+                           <span  class="star">&nbsp;</span>
+                           <span  class="star">&nbsp;</span>
                         </div>
                      </div>
+                      <input type="hidden" id="testRating" name="testRating" value="">
                      <br>
                      <label for = "customerName">Name</label>
                      <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." required/>
@@ -131,7 +139,7 @@
                         <label for = "submitDescription" >Description</label>
                         <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?" required></textarea>
                      </div>
-                     <input type="submit" id = "submitPost" name = "submitPost">
+                     <input type="submit" id = "submitPost" name = "submitPost" onclick = "return setValue();"/>
                   </div>
                </div>
             </form>
@@ -171,26 +179,3 @@
       </footer>
    </body>
 </html>
-
-<script>
-   $(document).ready(function()){
-      $('#submitPost').click(function()){
-         var image_name = $("image").val();
-         if(image_name == '')
-         {
-            alert("please select image");
-            return false;
-         }
-         else
-         {
-            var extension = $('image').val().split('.').pop().toLowerCase();
-            if(jQuery.inArray(extension,['gif','png','jpg','jpeg']) == -1)
-            {
-               alert("invalid image file");
-               $('image').val('');
-               return false;
-            }
-         }
-      });
-   });
-</script>

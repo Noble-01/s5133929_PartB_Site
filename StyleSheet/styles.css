@@ -145,10 +145,6 @@ float: left;
   .star.rated{
       counter-increment: rateme 1;
   }
-  /*
-  .stars::after{
-      content: counter(rateme) '/5';
-  }*/
   .navbar-nav {
     
     list-style-type: none;
