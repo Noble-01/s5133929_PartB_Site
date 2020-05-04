@@ -87,15 +87,20 @@
             ?>
                <div class="cardContainer">
                   <h4><b><?php echo $post['DISHNAME'] ?></b></h4> 
-                  <?php
-                     for($x=1;$x<= intval($post['RATING']);$x++) {
-                        echo '<img src = ..\..\Images\filledStar.png width = 14% >';
-                     }
-                     while ($x<=5) {
-                        echo '<img src = ..\..\Images\emtpyStar.png width = 11% style = "margin-bottom:0.25em; padding-left:0.5em;">';
-                        $x++;
-                     }
-                  ?>
+                  <table>
+                     <tr>
+                        <td style="width:30%;">
+                           <h4><b>Rating: <?php echo $post['RATING'] ?>/5</b></h4>
+                        </td>
+                        <td style="width:70%;">
+                           <?php
+                              for($x=1;$x<= intval($post['RATING']);$x++) {
+                                 echo '<img src = ..\..\Images\filledStar.png width = 20% >';
+                              }
+                           ?>
+                        </td>
+                     </tr>
+                  </table>
                   <p><?php echo $post['DISHDESCRIPTION'] ?></p> 
                </div>
             </div>
