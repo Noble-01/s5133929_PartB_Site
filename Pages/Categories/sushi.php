@@ -16,7 +16,7 @@
       <header>
          <!-- NavBar-->
          <nav class="navbar ">
-            <a class="centerStuff" href="..\index.html"><img src="..\..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+            <a  href="..\index.html"><img src="..\..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
             <ul class="navbar-nav ">
                <div class = "moveNavItems">
                   <li class="nav-item ">

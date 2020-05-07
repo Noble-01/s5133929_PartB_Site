@@ -1,209 +1,15 @@
-body,html {
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.container{
-  min-height: 100%;
-}
-.main{
-  padding-bottom: 100px;
-}
-footer{
-  background-color: #4CAF50;
-  position: relative;
-  bottom: 0;
-  margin-top: -50px;
-
-  /*
-  margin-top:20px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  */
-}
-
-.logoImage{
-    position: relative;
-    width:200px;
-    height:150px;
-
-}
-.centerColumn{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-}
-.contactLeft{
-  float: left;
-  width: 15%;
-}
-.contactLeft > p, h1{
-line-height: 0.5em;
-}
-.contactRight{
-  float: left;
-  width: 30%;
-  padding-left: 50px;
-}
-
-.footerleft {
-  float: left;
-  width: 15%;
-}
-.footerright {
-  float: left;
-  width: 10%;
-}
-.footermiddle{ 
-float: left;
-  width: 10%;
-}
-
-.footermiddle a,ul{
-  text-decoration: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.centerStuff{
-  display: flex;
-  justify-content: center;
-}
-.fa {
-    padding: 10px;
-    font-size: 10px;
-    width: 20px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-  
-  .fa-google {
-    background: #dd4b39;
-    color: white;
-  }
-  
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
-
-  .submitForm {
-    position: relative;
-    top: 2em;
-    margin: 0 auto;
-    width: 40%;
-    padding: 20px;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 0 25px 0 red; 
-  }
-  .submitFormGroup{
-    width: 50%;
-  }
-  .star{
-    color: goldenrod;
-    font-size: 1.5rem;
-    padding: 0.2rem; /* space out the stars */
-  }
-  .star::before{
-    content: '\2606';    /* star outline */
-    cursor: pointer;
-  }
-  .star.rated::before{
-    /* the style for a selected star */
-    content: '\2605';  /* filled star */
-  }
-  
-  .stars{
-      counter-reset: rateme 0;   
-      font-size: 1.5rem;
-      font-weight: 900;
-  }
-  .star.rated{
-      counter-increment: rateme 1;
-  }
-  .navbar-nav {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(97, 95, 95);
-  }
-  .moveNavItems{
-    position: relative;
-    left:100px;
-  }
-  .nav-item {
-    float: left;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    margin-right: 10px;
-  }
-  
-  .nav-item a {
-    font-size: larger;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .nav-item a:hover:not(.active) {
-    background-color:#4CAF50;
-  }
-  
-  .searchBar{
-    position: relative;
-    float: right;
-    margin-right: 10px;
-  }
-  input[type=search] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  input[type=text], input[type = email], select, textarea {
-    width: 100%;
-    padding: 16px 8px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    display: inline-block;
-  }
-  input[type=text] :focus  {
-    background-color: #1bfc9370;
-}
-  input[type=submit] {
+/*style for body of all pages and generic styles */
+    body,html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    .container{
+    min-height: 100%;
+    }
+    .main{
+    padding-bottom: 100px;
+    }
+    input[type=submit] {
     width: 50%;
     color: white;
     padding: 14px 20px;
@@ -212,64 +18,105 @@ float: left;
     border-radius: 4px;
     cursor: pointer;
     background-color:rgb(197, 44, 44);
-  }
-  
-  input[type=submit]:hover {
+    }
+    input[type=submit]:hover {
     background-color:rgb(141, 35, 35);
-  }
-  @media screen and (max-width: 600px) {
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
-  }
-  .submitTextArea{
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-  }
-
-  .aboutUsBanner{
-    margin-top: 20em;
-    margin: 0 auto;
-    width: 50%;
-    height: 20em;
+    }
+/*styling for navbar*/
+    .navbar-nav {
+    list-style-type: none;
+    overflow: hidden;
     background-color: rgb(97, 95, 95);
-  }
-
-  .aboutUsBannerHeadings{
-    line-height: 6em;
-    position: relative;
-    padding-top: 3em;
-    text-align: center;
-    margin: 0px;
-  }
-  .aboutUsContent > p{
-    margin: 0;
-    line-height: 1.5em;
-    padding-top: 1em;
-  }
-  .aboutUsContent{
-    margin-top: 20em;
-    padding-bottom: 2em;
-    margin: 0 auto;
-    width: 50%;
-    height: auto;
-    background-color: rgb(199, 199, 199);
-  }
-  .aboutUsImage{
-    width: 430px;
-    height: auto;
-    margin: 20px;
-    display: flex;
+    }
+    .nav-item {
     float: left;
-  }
-  .contactContainer{
-    position: relative;
+    position: sticky;
+    margin-right: 10px;
+    }
+    .nav-item a {
+    font-size: larger;
+    display: block;
+    color: white;
     text-align: center;
-  }
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+    .nav-item a:hover{
+    background-color:#4CAF50;
+    }
+    .searchBar{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    }
+    input[type=search] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    .logoImage{
+    position: relative;
+    width:200px;
+    height:150px;
+    display: flex;
+    }
+/* styling for footer content*/
+    footer{
+    background-color: #4CAF50;
+    position: relative;
+    bottom: 0;
+    margin-top: -50px;
+    }
+    .footerleft {
+    float: left;
+    width: 15%;
+    }
+    .footerright {
+    float: left;
+    width: 10%;
+    }
+    .footermiddle{ 
+    float: left;
+    width: 10%;
+    }
+    .footermiddle a,ul{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    .fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    }
+    .fa:hover {
+    opacity: 0.7;
+    }
+    .fa-facebook {
+    background: #3B5998;
+    color: white;
+    }
+    .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    }
+    .fa-google {
+    background: #dd4b39;
+    color: white;
+    }
+    .fa-linkedin {
+    background: #007bb5;
+    color: white;
+    }
+/*styling for contact us page*/
   .contactBanner{
     object-fit: cover;
     width: 100%;
@@ -277,21 +124,47 @@ float: left;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .hero-text {
+    }
+    .hero-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     color: rgb(180, 0, 0);
-  }
-
+    }
+    
+  .contactContainer{
+    position: relative;
+    text-align: center;
+    }
+    .centerColumn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    }
+    .contactLeft{
+    float: left;
+    width: 15%;
+    }
+    .contactLeft > p, h1{
+    line-height: 0.5em;
+    }
+    .contactRight{
+    float: left;
+    width: 30%;
+    padding-left: 50px;
+    }
     .contactForm {
     border: 5px solid #f1f1f1;
     }
     .contactForm > h1 {
-      text-align: center;
-      }
+    text-align: center;
+    }
+    .formcontainer {
+    text-align: left;
+    margin: 24px 50px 12px;
+    }
     .contactButton {
     background-color: #8ebf42;
     color: white;
@@ -301,69 +174,143 @@ float: left;
     cursor: grabbing;
     width: 100%;
     }
-
-    button:hover {
-    opacity: 0.8;
+/*styling for submit form*/
+    .submitForm {
+    position: relative;
+    top: 2em;
+    margin: 0 auto;
+    width: 40%;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 0 25px 0 red; 
     }
-    .formcontainer {
-    text-align: left;
-    margin: 24px 50px 12px;
+    .submitFormGroup{
+    width: 50%;
     }
-
-    .foodRow {
-      justify-content: center;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 4px;
-      text-align: center;
+    input[type=text], input[type = email], select, textarea {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
     }
-    
-    /* Create four equal columns that sits next to each other */
+  /*styling for rating system on submit form */
+    .star{
+    color: goldenrod; /*colour of star*/
+    font-size: 1.5rem;
+    padding: 0.2rem; /* space out the stars */
+    }
+    /* star outline */
+    .star::before{
+    content: '\2606';    
+    cursor: pointer;
+    }
+    .star.rated::before{
+    /* the style for a selected star */
+    content: '\2605';  /* filled star */
+    }
+    .stars{
+    counter-reset: rateme 0;   
+    font-size: 1.5rem;
+    font-weight: 900;
+    }
+    .star.rated{
+    counter-increment: rateme 1;
+    }
+    .submitTextArea{
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    }
+/*styling for about us page */
+    .aboutUsBanner{
+    margin-top: 20em;
+    margin: 0 auto;
+    width: 50%;
+    height: 20em;
+    background-color: rgb(97, 95, 95);
+    }
+    .aboutUsBannerHeadings{
+    line-height: 6em;
+    position: relative;
+    padding-top: 3em;
+    text-align: center;
+    margin: 0px;
+    }
+    .aboutUsContent > p{
+    margin: 0;
+    line-height: 1.5em;
+    padding-top: 1em;
+    }
+    .aboutUsContent{
+    margin-top: 20em;
+    padding-bottom: 2em;
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    background-color: rgb(199, 199, 199);
+    }
+    .aboutUsImage{
+    width: 430px;
+    height: auto;
+    margin: 20px;
+    display: flex;
+    float: left;
+    }
+/*styling for food pages*/
+  /* Create four equal columns that sits next to each other */
     .foodColumn {
-      -ms-flex: 25%; /* IE10 */
-      flex: 25%;
-      max-width: 20%;
-      padding: 0 4px;
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 20%;
+    padding: 0 4px;
     }
-
     .foodColumn > a{
-      text-decoration: none;
+    text-decoration: none;
     }
-  
     .foodColumn:hover{
-      opacity: 0.3;
+    opacity: 0.3;
     }
-    
     .foodColumn img {
-      margin-top: 8px;
-      width: 75%;
+    margin-top: 8px;
+    width: 75%;
     }
-
     .foodHeader{
-      padding: 32px;
-      text-align: center;
-      text-decoration: underline;
+    padding: 32px;
+    text-align: center;
+    text-decoration: underline;
     }
     .card {
-      margin-left: 1em;
-      margin-right: 1em;
-      margin-top: 5em;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      width: 20%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 5em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
     }
-    
     .card:hover {
-      box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 30px 16px 0 rgba(0,0,0,0.2);
     }
-    
     .cardContainer {
-      padding: 2px 16px;
+    padding: 2px 16px;
     }
-
     .foodCards{
-      display: inline-block;
-      justify-content: space-evenly;
-      display: flex;
-      flex-wrap: wrap;
+    display: inline-block;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .foodRow {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    text-align: center;
     }
