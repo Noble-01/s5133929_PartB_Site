@@ -22,6 +22,59 @@
     input[type=submit]:hover {
     background-color:rgb(141, 35, 35);
     }
+
+    .centerColumn{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+    }
+/*styling for home page*/
+    .mainPageBanner{
+      overflow: hidden;
+      z-index: 1;
+      height: 415px;
+      background-color: bisque;
+      display: block;
+      position: relative;
+      width:100%;
+  }
+  
+  .mainPageBanner h1 {
+      text-align: center;
+      color: #000000;
+      position: relative;
+      top: 40%;
+  }
+  
+  .mainPageBannerPhotos {
+      z-index: -1;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+  }
+  
+  .searchBarFood {
+      position: relative;
+      top: 45%;
+      width: 30%;
+      margin: auto;
+  }
+  
+  #searchFood{
+      border: 0;
+  }
+
+  .homePageSearchButton {
+    background-color:green;
+    color: white;
+    height: 40px;
+    width: 110px;
+    padding: 0;
+    border: none;
+}
+
 /*styling for navbar*/
     .navbar-nav {
     list-style-type: none;
@@ -133,15 +186,9 @@
     color: rgb(180, 0, 0);
     }
     
-  .contactContainer{
+    .contactContainer{
     position: relative;
     text-align: center;
-    }
-    .centerColumn{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    column-gap: 20px;
     }
     .contactLeft{
     float: left;
@@ -265,9 +312,8 @@
     float: left;
     }
 /*styling for food pages*/
-  /* Create four equal columns that sits next to each other */
+  /* Create four equal columns that sit next to each other */
     .foodColumn {
-    -ms-flex: 25%; /* IE10 */
     flex: 25%;
     max-width: 20%;
     padding: 0 4px;
@@ -287,6 +333,14 @@
     text-align: center;
     text-decoration: underline;
     }
+    .foodRow {
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+      text-align: center;
+    }
+/*styling for category pages */
     .card {
     margin-left: 1em;
     margin-right: 1em;
@@ -302,15 +356,7 @@
     padding: 2px 16px;
     }
     .foodCards{
-    display: inline-block;
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
-    }
-    .foodRow {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    text-align: center;
     }
