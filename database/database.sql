@@ -6,8 +6,8 @@ DROP TABLE IF EXISTS Customer;
 CREATE TABLE Customer
 (
     CID INTEGER PRIMARY KEY,
-    NAME VARCHAR(64) UNIQUE NOT NULL,
-    EMAIL VARCHAR(64)
+    NAME VARCHAR(64) NOT NULL,
+    EMAIL VARCHAR(64) NOT NULL
 
 );
 
@@ -21,14 +21,16 @@ CREATE TABLE Post
     PID INTEGER PRIMARY KEY,
     DISHNAME VARCHAR(30),
     CATEGORY VARCHAR(64) NOT NULL,
+    IMAGE BLOB NOT NULL,
+    RATING INTEGER (4) NOT NULL,
     DISHDESCRIPTION VARCHAR(64) NOT NULL,
     CID INTEGER,
     FOREIGN KEY (CID) REFERENCES Customer(CID)
 );
 
 INSERT INTO Post VALUES
-(1,'steak n fires', 'steak', 'good steak with nice sauce', 1),
-(2,'Nigiri', 'Sushi', 'fish was fresh', 1)
+(1,'steak n fires', 'steak', '', 3, 'good steak with nice sauce', 1),
+(2,'Nigiri', 'Sushi', '', 4, 'fish was fresh', 1)
 ;
 
 CREATE TABLE Question
