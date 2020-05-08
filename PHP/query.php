@@ -1,7 +1,7 @@
 <?php
 
    class MyDB extends SQLite3
-   {
+   {  
       function __construct()
       {
             $this->open('..\database\database.db');
@@ -69,5 +69,31 @@
      
    }
    
+   function getRandomRecords($searchTerm = null){
+      $db = new MyDB();
+      $array = [];
+      if(!$db){
+         echo '<script type="text/javascript">alert("'.$db->lastErrorMsg().'");</script>';
+      } else {
+         //echo "Opened database successfully\n";
+      }
+      if(!$searchTerm) {
+         $sql ='SELECT * from Post;';
+      } else {
+         $sql ='SELECT * FROM Post ORDER BY RAND() LIMIT 4';
+      }
+      $ret = $db->query($sql);
+     
+      if(!$ret){
+        echo $db->lastErrorMsg();
+        return [];
+      } else {
+         while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+            $array[] = $row;
+         }
+         $db->close();
+         return $array;
+      }
+   }
       
 ?>
