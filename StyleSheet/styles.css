@@ -3,6 +3,9 @@
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     }
+    a {
+      text-decoration: none !important;
+    }
     .container{
     min-height: 100%;
     }
@@ -132,7 +135,6 @@
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
     }
     .nav-item a:hover{
     background-color:#4CAF50;
@@ -177,7 +179,6 @@
     width: 10%;
     }
     .footermiddle a,ul{
-    text-decoration: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -187,7 +188,6 @@
     font-size: 10px;
     width: 20px;
     text-align: center;
-    text-decoration: none;
     margin: 5px 2px;
     }
     .fa:hover {
@@ -358,9 +358,6 @@
     max-width: 20%;
     padding: 0 4px;
     }
-    .foodColumn > a{
-    text-decoration: none;
-    }
     .foodColumn:hover{
     opacity: 0.3;
     }
@@ -400,4 +397,11 @@
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
+    }
+
+    .card > a:link{
+      color: black;
+    }
+    .card > a:visited{
+      color: black;
     }
