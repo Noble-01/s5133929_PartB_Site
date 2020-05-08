@@ -47,10 +47,10 @@
             
             <?php 
             if ($post['IMAGE'] == ''){
-               echo '<img width = "100%" src = "..\..\Images\pizzaFood.jpg">';
+               echo '<img width = "100%"  alt = "default image" src = "..\..\Images\pizzaFood.jpg">';
             }
             else{
-               echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>';
+               echo '<img width = "100%"  alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
             }
             ?>
                <div class="cardContainer">

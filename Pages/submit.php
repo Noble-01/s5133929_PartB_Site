@@ -58,6 +58,8 @@
       </header>
       <div class="container">
          <div class="main">
+            <img src ="..\Images\foodBackground1.png" alt ="image of food">
+            <img src ="..\Images\foodBackground2.png" alt ="image of food">
             <form class=" submitForm" id = "submitForm" name = "submitForm" action="" method="POST" enctype = "multipart/form-data">
                <div class="centerColumn">
                   <div class = "submitFormGroup">

@@ -76,10 +76,10 @@
                      <a href = "Categories\<?php echo $post['CATEGORY']?>.php">
                         <?php 
                            if ($post['IMAGE'] == ''){
-                              echo '<img width = "100%" src = "..\Images\steakFood.jpg">';
+                              echo '<img width = "100%" alt = "default image" src = "..\Images\steakFood.jpg">';
                            }
                            else{
-                              echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>';
+                              echo '<img width = "100%" alt="food image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
                            }
                            ?>
                         <div class="cardContainer">
@@ -93,7 +93,7 @@
                                  <td style="width:70%;">
                                     <?php
                                        for($x=1;$x<= intval($post['RATING']);$x++) {
-                                          echo '<img src = ..\Images\filledStar.png width = 20% >';
+                                          echo '<img src = ..\Images\filledStar.png width = 20% alt ="star">';
                                        }
                                        ?>
                                  </td>
