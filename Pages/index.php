@@ -47,37 +47,29 @@
                   <input id="searchFood" name="searchBar" type="text" placeholder="Enter food" /><button class="homePageSearchButton" type="button">FIND FOOD</button>
                </div>
             </div>
+            <br>
             <div class = "centerColumn">
-            <div class="slideshow-container">
-
+               <div class="slideshow-container">
                   <div class="mySlides fade">
-                  <div class="numbertext">1 / 3</div>
-                  <img src="..\Images\steakFood.jpg" style="width:100%">
-                  <div class="text">Caption Text</div>
+                     <img src="..\Images\steakFood.jpg" style="width:100%">
                   </div>
-
                   <div class="mySlides fade">
-                  <div class="numbertext">2 / 3</div>
-                  <img src="..\Images\pizzaFood.jpg" style="width:100%">
-                  <div class="text">Caption Two</div>
+                     <img src="..\Images\pizzaFood.jpg" style="width:100%">
                   </div>
-
                   <div class="mySlides fade">
-                  <div class="numbertext">3 / 3</div>
-                  <img src="..\Images\sushiFood.jpg" style="width:100%">
-                  <div class="text">Caption Three</div>
-                  </div>
-
-                  </div>
-                  <br>
-
-                  <div style="text-align:center">
-                  <span class="dot"></span> 
-                  <span class="dot"></span> 
-                  <span class="dot"></span> 
+                     <img src="..\Images\sushiFood.jpg" style="width:100%">
                   </div>
                </div>
-               <div class = "centerColumn">
+            </div>
+            <br>
+            <div style="text-align:center">
+               <span class="dot"></span> 
+               <span class="dot"></span> 
+               <span class="dot"></span> 
+               <br><br>
+               <h1 >Suggested Posts</h1>
+            </div>
+            <div class = "centerColumn">
                <div class = "foodCards">
                   <?php foreach ($posts as $post) :?>
                   <div class="card" style="max-width:15%;">
@@ -147,23 +139,23 @@
    </body>
 </html>
 <script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
+   var slideIndex = 0;
+   showSlides();
+   
+   function showSlides() {
+     var i;
+     var slides = document.getElementsByClassName("mySlides");
+     var dots = document.getElementsByClassName("dot");
+     for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+     }
+     slideIndex++;
+     if (slideIndex > slides.length) {slideIndex = 1}    
+     for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" active", "");
+     }
+     slides[slideIndex-1].style.display = "block";  
+     dots[slideIndex-1].className += " active";
+     setTimeout(showSlides, 5000); // Change image every 2 seconds
+   }
 </script>
