@@ -78,9 +78,10 @@
          //echo "Opened database successfully\n";
       }
       if(!$searchTerm) {
-         $sql ='SELECT * from Post;';
+         $sql ='SELECT * FROM Post ORDER BY RANDOM() LIMIT 4';
+
       } else {
-         $sql ='SELECT * FROM Post ORDER BY RAND() LIMIT 4';
+         $sql ='SELECT * from Post;';
       }
       $ret = $db->query($sql);
      
