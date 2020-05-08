@@ -261,7 +261,11 @@
     cursor: grabbing;
     width: 100%;
     }
-/*styling for submit form*/
+/*styling for submit page*/
+    #submitBackground {
+    background-image: url(..\Images\foodBackground1.png) right bottom no-repeat, url(..\Images\foodBackground2.png) left top repeat;
+    padding: 15px;
+    }
     .submitForm {
     position: relative;
     top: 2em;
