@@ -29,53 +29,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
-      <script>
-      let rating = 0;
-         //initial setup
-         document.addEventListener('DOMContentLoaded', function(){
-             let stars = document.querySelectorAll('.star');
-             stars.forEach(function(star){
-                 star.addEventListener('click', setRating); 
-             });
-             
-             let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
-             let target = stars[rating - 1];
-             target.dispatchEvent(new MouseEvent('click'));
-         });
-         
-         function setRating(ev){
-             let span = ev.currentTarget;
-             let stars = document.querySelectorAll('.star');
-             let match = false;
-             let num = 0;
-             stars.forEach(function(star, index){
-                 if(match){
-                     star.classList.remove('rated');
-                 }else{
-                     star.classList.add('rated');
-                 }
-                 //are we currently looking at the span that was clicked
-                 if(star === span){
-                     match = true;
-                     num = index + 1;
-                     rating = num;
-                 }
-             });
-             document.querySelector('.stars').setAttribute('data-rating', num);
-
-             //alert(rating)
-         }
-         function setValue(){
-            document.submitForm.testRating.value = rating;
-         }
-
-      </script>
    </head>
    <body>
       <header>
          <!-- NavBar-->
          <nav class="navbar ">
-            <a  href="index.html"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+            <a  href="index.php"><img src="..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
             <ul class="navbar-nav ">
                <div class = "moveNavItems">
                   <li class="nav-item ">
@@ -179,3 +138,44 @@
       </footer>
    </body>
 </html>
+<script>
+      let rating = 0;
+         //initial setup
+         document.addEventListener('DOMContentLoaded', function(){
+             let stars = document.querySelectorAll('.star');
+             stars.forEach(function(star){
+                 star.addEventListener('click', setRating); 
+             });
+             
+             let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+             let target = stars[rating - 1];
+             target.dispatchEvent(new MouseEvent('click'));
+         });
+         
+         function setRating(ev){
+             let span = ev.currentTarget;
+             let stars = document.querySelectorAll('.star');
+             let match = false;
+             let num = 0;
+             stars.forEach(function(star, index){
+                 if(match){
+                     star.classList.remove('rated');
+                 }else{
+                     star.classList.add('rated');
+                 }
+                 //are we currently looking at the span that was clicked
+                 if(star === span){
+                     match = true;
+                     num = index + 1;
+                     rating = num;
+                 }
+             });
+             document.querySelector('.stars').setAttribute('data-rating', num);
+
+             //alert(rating)
+         }
+         function setValue(){
+            document.submitForm.testRating.value = rating;
+         }
+
+      </script>
