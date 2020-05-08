@@ -73,31 +73,35 @@
                <div class = "foodCards">
                   <?php foreach ($posts as $post) :?>
                   <div class="card" style="max-width:15%;">
-                     <?php 
-                        if ($post['IMAGE'] == ''){
-                           echo '<img width = "100%" src = "..\Images\steakFood.jpg">';
-                        }
-                        else{
-                           echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>';
-                        }
-                        ?>
-                     <div class="cardContainer">
-                        <h4><b><?php echo $post['DISHNAME'] ?></b></h4>
-                        <table>
-                           <tr>
-                              <td style="width:30%;">
-                                 <h4><b>Rating: <?php echo $post['RATING'] ?>/5</b></h4>
-                              </td>
-                              <td style="width:70%;">
-                                 <?php
-                                    for($x=1;$x<= intval($post['RATING']);$x++) {
-                                       echo '<img src = ..\Images\filledStar.png width = 20% >';
-                                    }
-                                    ?>
-                              </td>
-                           </tr>
-                        </table>
-                     </div>
+                     <a href = "Categories\<?php echo $post['CATEGORY']?>.php">
+                        <?php 
+                           if ($post['IMAGE'] == ''){
+                              echo '<img width = "100%" src = "..\Images\steakFood.jpg">';
+                           }
+                           else{
+                              echo '<img width = "100%" src="data:image;base64, '.$post['IMAGE'].'"/>';
+                           }
+                           ?>
+                        <div class="cardContainer">
+                        
+                           <h4><b><?php echo $post['DISHNAME'] ?></b></h4>
+                           <table>
+                              <tr>
+                                 <td style="width:30%;">
+                                    <h4><b>Rating: <?php echo $post['RATING'] ?>/5</b></h4>
+                                 </td>
+                                 <td style="width:70%;">
+                                    <?php
+                                       for($x=1;$x<= intval($post['RATING']);$x++) {
+                                          echo '<img src = ..\Images\filledStar.png width = 20% >';
+                                       }
+                                       ?>
+                                 </td>
+                              </tr>
+                           </table>
+                           
+                        </div>
+                                    </a>
                   </div>
                   <?php endforeach; ?>
                </div>
