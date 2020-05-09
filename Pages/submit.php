@@ -56,8 +56,8 @@
             </ul>
          </nav>
       </header>
-      <div class="container">
-         <div id = "submitBackground ">
+      <div class="container submitBackground">
+         <div class = "main">
             <form class=" submitForm" id = "submitForm" name = "submitForm" action="" method="POST" enctype = "multipart/form-data">
                <div class="centerColumn">
                   <div class = "submitFormGroup">

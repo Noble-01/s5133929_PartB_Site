@@ -41,82 +41,82 @@
       display: block;
       position: relative;
       width:100%;
-  }
+    }
   
-  .mainPageBanner h1 {
+    .mainPageBanner h1 {
       text-align: center;
       color: #000000;
       position: relative;
       top: 40%;
-  }
-  
-  .mainPageBannerPhotos {
+    }
+
+    .mainPageBannerPhotos {
       z-index: -1;
       bottom: 0;
       left: 0;
       position: absolute;
       height: 100%;
-  }
+    }
   
-  .searchBarFood {
+    .searchBarFood {
       position: relative;
       top: 45%;
       width: 30%;
       margin: auto;
-  }
+    }
   
-  #searchFood{
+    #searchFood{
       border: 0;
-  }
+    }
 
-  .homePageSearchButton {
-    background-color:green;
-    color: white;
-    height: 40px;
-    width: 110px;
-    padding: 0;
-    border: none;
-  }
+    .homePageSearchButton {
+      background-color:green;
+      color: white;
+      height: 40px;
+      width: 110px;
+      padding: 0;
+      border: none;
+    }
 
-  /* Slideshow container */
-  .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
 
 /*styling for navbar*/
     .navbar-nav {
@@ -262,9 +262,10 @@
     width: 100%;
     }
 /*styling for submit page*/
-    #submitBackground {
-    background-image: url(..\Images\foodBackground1.png) right bottom no-repeat, url(..\Images\foodBackground2.png) left top repeat;
-    padding: 15px;
+    .submitBackground {
+    background-image: url(../Images/foodBackground2.png);
+    background-repeat: no-repeat;
+    background-position: right;
     }
     .submitForm {
     position: relative;
@@ -347,12 +348,12 @@
     width: 50%;
     height: auto;
     background-color: rgb(199, 199, 199);
+    overflow:auto;
     }
     .aboutUsImage{
-    width: 430px;
+    width: 50%;
     height: auto;
     margin: 20px;
-    display: flex;
     float: left;
     }
 /*styling for food pages*/
