@@ -5,6 +5,7 @@
       $customerName = $_POST['customerName'];
       addCustomer($customerName);
       $dishName = $_POST['dishName'];
+      $location = $_POST['location'];
       $submitCategory = $_POST['submitCategory'];
       $submitDescription = $_POST['submitDescription'];
       if (file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])){
@@ -17,7 +18,7 @@
          $file = '';
       }
       $rating = $_POST['testRating'];
-      addPost($customerName,$dishName,$submitCategory,$file, $rating, $submitDescription);
+      addPost($customerName,$dishName,$location, $submitCategory,$file, $rating, $submitDescription);
 
    }
 
@@ -64,6 +65,10 @@
                      <div class="row">
                         <label>Dish Name</label>
                         <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" required/>
+                     </div>
+                     <div class="row">
+                        <label>Location</label>
+                        <input   type="text" name="location" id = "location" placeholder="suburb, state, address, store.." required/>
                      </div>
                      <div class = "row">
                         <label for ="submitCategory">Category</label>
