@@ -55,6 +55,7 @@
             ?>
                <div class="cardContainer">
                   <h4><b><?php echo $post['DISHNAME'] ?></b></h4> 
+                  <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
                   <table>
                      <tr>
                         <td style="width:30%;">

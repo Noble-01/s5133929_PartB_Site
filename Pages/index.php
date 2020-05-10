@@ -72,7 +72,7 @@
             <div class = "centerColumn">
                <div class = "foodCards">
                   <?php foreach ($posts as $post) :?>
-                  <div class="card" style="max-width:15%;">
+                  <div class="card" style="max-width:25%;">
                      <a href = "Categories\<?php echo $post['CATEGORY']?>.php">
                         <?php 
                            if ($post['IMAGE'] == ''){
@@ -85,6 +85,10 @@
                         <div class="cardContainer">
                         
                            <h4><b><?php echo $post['DISHNAME'] ?></b></h4>
+                           
+                          <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
+                           
+                           
                            <table>
                               <tr>
                                  <td style="width:30%;">
