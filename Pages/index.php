@@ -72,7 +72,7 @@
             <div class = "centerColumn">
                <div class = "foodCards">
                   <?php foreach ($posts as $post) :?>
-                  <div class="card" style="max-width:25%;">
+                  <div class="card" style="max-width:15%;">
                      <a href = "Categories\<?php echo $post['CATEGORY']?>.php">
                         <?php 
                            if ($post['IMAGE'] == ''){
