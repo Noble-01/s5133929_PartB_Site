@@ -62,15 +62,14 @@
             <form class=" submitForm" id = "submitForm" name = "submitForm" action="" method="POST" enctype = "multipart/form-data">
                <div class="centerColumn">
                   <div class = "submitFormGroup">
-                     <div class="row">
                         <label>Dish Name</label>
                         <input   type="text" name="dishName" id = "dishName" placeholder="Dish name" required/>
-                     </div>
-                     <div class="row">
+             
+       
                         <label>Location</label>
                         <input   type="text" name="location" id = "location" placeholder="suburb, state, address, store.." required/>
-                     </div>
-                     <div class = "row">
+                  
+
                         <label for ="submitCategory">Category</label>
                         <select id = "submitCategory" name = "submitCategory" required>
                            <option value = "steak">Steak</option>
@@ -78,13 +77,13 @@
                            <option value = "pizza">Pizza</option>
                            <option value = "enchilada">Enchilada</option>
                         </select>
-                     </div>
-                     <div class="row">
+
                         <label for = "image">Upload Image:</label>
                         <input type="file" id="image" name="image">
-                     </div>
-                     <br>
+
+                     
                      <div class="row">
+                     <br>
                         <label for = "rating">Rating of dish:</label>
                         
                         <div class="stars" id = "rating" name = "rating" data-rating="1">
@@ -99,11 +98,10 @@
                      <br>
                      <label for = "customerName">Name</label>
                      <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." required/>
-                     <div class="row">
                         <label for = "submitDescription" >Description</label>
-                        <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?" required></textarea>
-                     </div>
+                        <textarea name = "submitDescription" id = "submitDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Meal was eaten?" required></textarea>     
                      <input type="submit" id = "submitPost" name = "submitPost" onclick = "return setValue();"/>
+                     
                   </div>
                </div>
             </form>
