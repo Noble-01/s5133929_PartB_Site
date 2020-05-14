@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
    <?php
+   //request php file
       require_once '..\PHP\query.php';
+      //execute getRandomRecords function from php file and store returned array into var $posts
+      // - Returns: array of 4 random posts
       $posts = getRandomRecords();
       ?>
    <head>
+   <!-- set char set -->
       <meta charset="utf-8">
-      <!-- Boostrap -->
+      <!-- link stylesheet -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="..\StyleSheet\styles.css">
@@ -37,8 +41,10 @@
             </ul>
          </nav>
       </header>
+      <!--Page Content -->
       <div class="container">
          <div class="main">
+         <!-- banner-->
             <div class="mainPageBanner">
                <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/63c879e3c7f539bae7d030dd37904c70.svg" alt="">
                <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/53eb18f87274ca44645e2aa6ea0911f3.svg" style ="float:right;"alt="">
@@ -49,6 +55,7 @@
             </div>
             <br>
             <div class = "centerColumn">
+            <!-- slide show-->
                <div class="slideshow-container">
                   <div class="mySlides fade">
                      <img src="..\Images\steakFood.jpg" style="width:100%">
@@ -70,21 +77,27 @@
                <h1 >Suggested Posts</h1>
             </div>
             <div class = "centerColumn">
+            <!-- 4 random posts from database  -->
                <div class = "foodCards">
+               <!-- loop through returned records from post -->
                   <?php foreach ($posts as $post) :?>
                   <div class="card" style="max-width:15%;">
+                  <!-- make cards linkable to their category page -->
                      <a href = "Categories\<?php echo $post['CATEGORY']?>.php">
                         <?php 
+                        //if no image is stored in database give default image to card
                            if ($post['IMAGE'] == ''){
                               echo '<img width = "100%" alt = "default image" src = "..\Images\steakFood.jpg">';
                            }
+                           //else display the encoded image in the database
                            else{
                               echo '<img width = "100%" alt="food image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
                            }
                            ?>
+                           <!-- container for card text -->
                         <div class="cardContainer">
                         
-                           <h4><b><?php echo $post['DISHNAME'] ?></b></h4>
+                           <h2><?php echo $post['DISHNAME'] ?></h2>
                            
                           <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
                            
@@ -92,7 +105,7 @@
                            <table>
                               <tr>
                                  <td style="width:30%;">
-                                    <h4><b>Rating: <?php echo $post['RATING'] ?>/5</b></h4>
+                                    <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
                                  </td>
                                  <td style="width:70%;">
                                     <?php
@@ -112,6 +125,7 @@
             </div>
          </div>
       </div>
+      <!-- footer -->
       <footer>
          <div class="row">
             <div class="centerColumn">
@@ -147,23 +161,27 @@
    </body>
 </html>
 <script>
+//javascript code for slideshow
    var slideIndex = 0;
    showSlides();
-   
+   //function creates array for slide show and dots underneath it as well as setting time for moving images
    function showSlides() {
      var i;
      var slides = document.getElementsByClassName("mySlides");
      var dots = document.getElementsByClassName("dot");
+     //loop through array
      for (i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";  
      }
      slideIndex++;
-     if (slideIndex > slides.length) {slideIndex = 1}    
+     if (slideIndex > slides.length) {slideIndex = 1}
+     //loop through dots array setting to an "active" state using css   
      for (i = 0; i < dots.length; i++) {
        dots[i].className = dots[i].className.replace(" active", "");
      }
      slides[slideIndex-1].style.display = "block";  
      dots[slideIndex-1].className += " active";
-     setTimeout(showSlides, 5000); // Change image every 2 seconds
+     // Change image every 5 seconds
+     setTimeout(showSlides, 5000); 
    }
 </script>
