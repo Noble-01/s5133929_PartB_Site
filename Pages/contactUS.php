@@ -58,7 +58,7 @@
             <div class="contactContainer">
                <!-- banner -->
                <img class = " contactBanner" src="../Images/contactBackground.jpg" alt="bannerImage">
-               <div class="hero-text">
+               <div class="bannerText">
                   <h1 style="font-size:100px">- Hello - </h1>
                   <u>
                      <p style="font-size:30px">How can we help you?</p>
