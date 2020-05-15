@@ -53,12 +53,12 @@
             }
             ?>
                <div class="cardContainer">
-                  <h4><b><?php echo $post['DISHNAME'] ?></b></h4> 
+                  <h2><?php echo $post['DISHNAME'] ?></h2> 
                   <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
                   <table>
                      <tr>
                         <td style="width:30%;">
-                           <h4><b>Rating: <?php echo $post['RATING'] ?>/5</b></h4>
+                           <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
                         </td>
                         <td style="width:70%;">
                            <?php
