@@ -87,7 +87,18 @@
                         <?php 
                            //if no image is stored in database give default image to card
                               if ($post['IMAGE'] == ''){
-                                 echo '<img width = "100%" alt = "default image" src = "..\Images\steakFood.jpg">';
+                                 if($post['CATEGORY'] == 'steak'){
+                                    echo '<img width = "100%" alt = "default image" src = "..\Images\steakFood.jpg">';
+                                 }
+                                 elseif ($post['CATEGORY'] == 'Pizza'){
+                                    echo '<img width = "100%" alt = "default image" src = "..\Images\pizzaFood.jpg">';
+                                 }
+                                 elseif ($post['CATEGORY'] == 'Sushi'){
+                                    echo '<img width = "100%" alt = "default image" src = "..\Images\sushiFood.jpg">';
+                                 }
+                                 elseif ($post['CATEGORY'] == 'Enchilada'){
+                                    echo '<img width = "100%" alt = "default image" src = "..\Images\enchiladaFood.jpg">';
+                                 }
                               }
                               //else display the encoded image in the database
                               else{
