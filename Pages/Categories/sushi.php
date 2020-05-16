@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!-- the styling/layout for this page is the same in every other page in the "Categories" sub folder wiht just changes to what the query is returning-->
 <?php
-//request the php file to execute php queries
-   require_once '..\..\PHP\categoryQueries.php';
-   $request = 'sushi';
-   //return records from table Post that have the category 'sushi'
-   $posts = getPosts($request);
-?>
+   //request the php file to execute php queries
+      require_once '..\..\PHP\categoryQueries.php';
+      $request = 'sushi';
+      //return records from table Post that have the category 'sushi'
+      $posts = getPosts($request);
+   ?>
 <html>
    <head>
       <meta charset="utf-8">
@@ -19,76 +19,74 @@
       <header>
          <!-- NavBar-->
          <nav class="navbar ">
-            <a  href="..\index.php"><img src="..\..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
-            <ul class="navbar-nav ">
-               <div class = "moveNavItems">
-                  <li class="nav-item ">
-                     <a class="nav-link " href="..\food.html">Food</a>
-                  </li>
-                  <li class="nav-item ">
-                     <a class="nav-link  "  href="..\submit.php">Submit</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link " href="..\contactUS.php">Contact Us</a>
-                  </li>
-                  <li class="nav-item ">
-                     <a class="nav-link "  href="..\aboutUs.html">About Us</a>
-                  </li>
-               </div>
-               <li class = "searchBar">
-                  <input  name = "search" type="search" placeholder="Search.." aria-label="Search">
+         <a  href="..\index.php"><img src="..\..\Images\theFullEnchilada.png" class ="logoImage" alt="Logo"></a>
+         <ul class="navbar-nav ">
+            <div class = "moveNavItems">
+               <li class="nav-item ">
+                  <a class="nav-link " href="..\food.html">Food</a>
                </li>
-            </ul>
-      
+               <li class="nav-item ">
+                  <a class="nav-link  "  href="..\submit.php">Submit</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link " href="..\contactUS.php">Contact Us</a>
+               </li>
+               <li class="nav-item ">
+                  <a class="nav-link "  href="..\aboutUs.html">About Us</a>
+               </li>
+            </div>
+            <li class = "searchBar">
+               <input  name = "search" type="search" placeholder="Search.." aria-label="Search">
+            </li>
+         </ul>
       </header>
       <!-- main page content -->
       <div class="container">
          <div class="main">
             <div class = "foodCards">
                <!-- print all posts retrieved in cards -->
-            <?php foreach ($posts as $post) :?>
-            <div class="card">
-            
-            <?php
-            //give default image if there is no encoded image in table for record
-            if ($post['IMAGE'] == ''){
-               echo '<img width = "100%" alt = "default image" src = "..\..\Images\steakFood.jpg">';
-            }
-            else{
-               //decode image
-               echo '<img width = "100%" alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
-            }
-            ?>
-               <div class="cardContainer">
-                  <h2><?php echo $post['DISHNAME'] ?></h2> 
-                  <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
-                  <table>
-                     <tr>
-                        <td style="width:30%;">
-                           <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
-                        </td>
-                        <td style="width:70%;">
-                           <?php
-                              //for loop stars based on the numer for rating
-                              for($x=1;$x<= intval($post['RATING']);$x++) {
-                                 echo '<img src = ..\..\Images\filledStar.png width = 20% >';
-                              }
-                           ?>
-                        </td>
-                     </tr>
-                  </table>
-                  <p><?php echo $post['DISHDESCRIPTION'] ?></p> 
+               <?php foreach ($posts as $post) :?>
+               <div class="card">
+                  <?php
+                     //give default image if there is no encoded image in table for record
+                     if ($post['IMAGE'] == ''){
+                        echo '<img width = "100%" alt = "default image" src = "..\..\Images\steakFood.jpg">';
+                     }
+                     else{
+                        //decode image
+                        echo '<img width = "100%" alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
+                     }
+                     ?>
+                  <div class="cardContainer">
+                     <h2><?php echo $post['DISHNAME'] ?></h2>
+                     <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
+                     <table>
+                        <tr>
+                           <td style="width:30%;">
+                              <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
+                           </td>
+                           <td style="width:70%;">
+                              <?php
+                                 //for loop stars based on the numer for rating
+                                 for($x=1;$x<= intval($post['RATING']);$x++) {
+                                    echo '<img src = ..\..\Images\filledStar.png width = 20% >';
+                                 }
+                                 ?>
+                           </td>
+                        </tr>
+                     </table>
+                     <p><?php echo $post['DISHDESCRIPTION'] ?></p>
+                  </div>
+                  <div class = "postOwnerName">
+                     <p>Contact details</p>
+                     <p><?php echo $post['NAME'] ?></p>
+                  </div>
+                  <br>
+                  <div class = "postOwnerEmail">
+                     <p><?php echo $post['EMAIL'] ?></p>
+                  </div>
                </div>
-               <div class = "postOwnerName">
-                  <p>Contact details</p>
-                  <p><?php echo $post['NAME'] ?></p>
-               </div>
-               <br>
-               <div class = "postOwnerEmail">
-                  <p><?php echo $post['EMAIL'] ?></p>
-               </div>
-            </div>
-            <?php endforeach; ?>
+               <?php endforeach; ?>
             </div>
          </div>
       </div>

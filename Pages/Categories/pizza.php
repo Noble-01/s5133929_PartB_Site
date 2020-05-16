@@ -3,7 +3,7 @@
    require_once '..\..\PHP\categoryQueries.php';
    $request = 'pizza';
    $posts = getPosts($request);
-?>
+   ?>
 <html>
    <head>
       <meta charset="utf-8">
@@ -37,53 +37,49 @@
                </li>
             </ul>
          </nav>
- 
       </header>
       <div class="container">
          <div class="main">
             <div class = "foodCards">
-            <?php foreach ($posts as $post) :?>
-            <div class="card">
-            
-            <?php 
-            if ($post['IMAGE'] == ''){
-               echo '<img width = "100%"  alt = "default image" src = "..\..\Images\pizzaFood.jpg">';
-            }
-            else{
-               echo '<img width = "100%"  alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
-            }
-            ?>
-               <div class="cardContainer">
-                  <h2><?php echo $post['DISHNAME'] ?></h2> 
-                  <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
-                  <table>
-                     <tr>
-                        <td style="width:30%;">
-                           <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
-                        </td>
-                        <td style="width:70%;">
-                           <?php
-                              for($x=1;$x<= intval($post['RATING']);$x++) {
-                                 echo '<img src = ..\..\Images\filledStar.png width = 20% >';
-                              }
-                           ?>
-                        </td>
-                     </tr>
-                  </table>
-                  <p><?php echo $post['DISHDESCRIPTION'] ?></p>
-                  
-
-               </div>
+               <?php foreach ($posts as $post) :?>
+               <div class="card">
+                  <?php 
+                     if ($post['IMAGE'] == ''){
+                        echo '<img width = "100%"  alt = "default image" src = "..\..\Images\pizzaFood.jpg">';
+                     }
+                     else{
+                        echo '<img width = "100%"  alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
+                     }
+                     ?>
+                  <div class="cardContainer">
+                     <h2><?php echo $post['DISHNAME'] ?></h2>
+                     <p> <b>Location: </b><?php echo $post['LOCATION'] ?> </p>
+                     <table>
+                        <tr>
+                           <td style="width:30%;">
+                              <h4>Rating: <?php echo $post['RATING'] ?>/5</h4>
+                           </td>
+                           <td style="width:70%;">
+                              <?php
+                                 for($x=1;$x<= intval($post['RATING']);$x++) {
+                                    echo '<img src = ..\..\Images\filledStar.png width = 20% >';
+                                 }
+                                 ?>
+                           </td>
+                        </tr>
+                     </table>
+                     <p><?php echo $post['DISHDESCRIPTION'] ?></p>
+                  </div>
                   <div class = "postOwnerName">
-                  <p>Contact details</p>
-                  <p><?php echo $post['NAME'] ?></p>
+                     <p>Contact details</p>
+                     <p><?php echo $post['NAME'] ?></p>
+                  </div>
+                  <br>
+                  <div class = "postOwnerEmail">
+                     <p><?php echo $post['EMAIL'] ?></p>
+                  </div>
                </div>
-               <br>
-               <div class = "postOwnerEmail">
-                  <p><?php echo $post['EMAIL'] ?></p>
-               </div>
-            </div> 
-            <?php endforeach; ?>
+               <?php endforeach; ?>
             </div>
          </div>
       </div>

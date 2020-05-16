@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <?php
-//request php file for queries 
-   require_once '..\PHP\query.php';
-   //if question form is submited execute the following code
-   if (isset($_POST['submitQuestion'])){
-      //retrieve the following ids from form and stpre them in variables
-      $customerContactName = $_POST['customerContactName'];
-      $contactEmail = $_POST['contactEmail'];
-      $subject = $_POST['subject'];
-      $questionDescription = $_POST['questionDescription'];
-      /**execute function to add question to database from php file with the following parameters
-       * - Parameter $customerContactName: name of person submitting form
-       * - Parameter $contactEmail: email of customer
-       * - Parameter $subject: subject of question
-       * - Parameter $questionDescription: description of question
-       */
-      addQuestion($customerContactName,$contactEmail,$subject,$questionDescription);
-   }
-?>
+   //request php file for queries 
+      require_once '..\PHP\query.php';
+      //if question form is submited execute the following code
+      if (isset($_POST['submitQuestion'])){
+         //retrieve the following ids from form and stpre them in variables
+         $customerContactName = $_POST['customerContactName'];
+         $contactEmail = $_POST['contactEmail'];
+         $subject = $_POST['subject'];
+         $questionDescription = $_POST['questionDescription'];
+         /**execute function to add question to database from php file with the following parameters
+          * - Parameter $customerContactName: name of person submitting form
+          * - Parameter $contactEmail: email of customer
+          * - Parameter $subject: subject of question
+          * - Parameter $questionDescription: description of question
+          */
+         addQuestion($customerContactName,$contactEmail,$subject,$questionDescription);
+      }
+   ?>
 <html>
    <head>
       <meta charset="utf-8">
@@ -69,14 +69,11 @@
             <div class="centerColumn">
                <!-- contact information -->
                <div class=" contactLeft">
-
                   <p style="font-size: 14px;">197 Onslow Road</p>
                   <p style="font-size: 14px;">Shenton Park, WA 6008</p>
                   <p style="font-size: 14px;"> Australia</p>
                   <p style="font-size: 14px;">Retail & Shop Tel: 0468 858 157</p>
                   <p style="font-size: 14px;">Email: Enchilada@yahoo.com.au</p>
-
-
                   <h1 style="font-size: 14px;">Opening Hours:</h1>
                   <p style="font-size: 14px;">Monday to Friday  -  8am to 5.00pm</p>
                   <p style="font-size: 14px;"> Saturday - 8am to 1.00pm </p>
@@ -85,21 +82,23 @@
                <div class=" contactRight">
                   <!-- form to submit questions -->
                   <form class = "contactForm" action="" method="POST">
-                     <legend><h1>Question?</h1></legend>
+                     <legend>
+                        <h1>Question?</h1>
+                     </legend>
                      <fieldset class="formcontainer">
-                     <hr/>
-                       <label for="customerName"><strong>Name</strong></label>
-                       <input type="text" placeholder="Enter full name" name="customerContactName" id = "customerContactName"required>
-                       <label for="contactEmail"><strong>Email</strong></label>
-                       <input type="email" placeholder="Enter email" name="contactEmail" id = "contactEmail" required>
-                       <label for="phone"><strong>Subject</strong></label>
-                       <input type="text" placeholder="Subject of question" name="subject" id = "subject"required>
-                       <label for = "questionDescription" ><strong>Description</strong></label>
-                       <textarea name = "questionDescription" id = "questionDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Question" required></textarea>
-                     <br>
-                     <input type="submit" id = "submitQuestion" name = "submitQuestion">
+                        <hr/>
+                        <label for="customerName"><strong>Name</strong></label>
+                        <input type="text" placeholder="Enter full name" name="customerContactName" id = "customerContactName"required>
+                        <label for="contactEmail"><strong>Email</strong></label>
+                        <input type="email" placeholder="Enter email" name="contactEmail" id = "contactEmail" required>
+                        <label for="phone"><strong>Subject</strong></label>
+                        <input type="text" placeholder="Subject of question" name="subject" id = "subject"required>
+                        <label for = "questionDescription" ><strong>Description</strong></label>
+                        <textarea name = "questionDescription" id = "questionDescription" class="submitTextArea" cols="8" maxlength="200"  placeholder="Question" required></textarea>
+                        <br>
+                        <input type="submit" id = "submitQuestion" name = "submitQuestion">
                      </fieldset>
-                   </form>
+                  </form>
                </div>
             </div>
          </div>
