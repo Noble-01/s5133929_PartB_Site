@@ -109,6 +109,7 @@
             <div class="footerleft">
                <h3>The Full Enchilada</h3>
                <p>Leaders in food multimedia </p>
+               <a href="Admin.php">Admin</a>	
             </div>
             <div class="footermiddle">
                <h3 >Support</h3>
