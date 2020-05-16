@@ -67,6 +67,7 @@
                <input style="margin-left:10px;" type="submit" value="Look up name">
             </form>
          </div>
+         <!--table displays all questions submitted to website-->
          <div class ="centerColumn">
             <table style="width:70%">
             <tr>
