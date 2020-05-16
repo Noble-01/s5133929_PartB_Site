@@ -128,7 +128,7 @@
       }
       //search for questions posted by user's name
       else{
-         $sql = 'SELECT * FROM Question Q, Customer C WHERE C.CID = Q.CID AND NAME LIKE "'.$searchTerm.'"';
+         $sql = 'SELECT * FROM Question Q, Customer C WHERE C.CID = Q.CID AND NAME LIKE "%'.$searchTerm.'%"';
       }
        //retrieve returned results
        $ret = $db->query($sql);
