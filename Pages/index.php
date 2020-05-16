@@ -46,8 +46,8 @@
          <div class="main">
          <!-- banner-->
             <div class="mainPageBanner">
-               <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/63c879e3c7f539bae7d030dd37904c70.svg" alt="">
-               <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/53eb18f87274ca44645e2aa6ea0911f3.svg" style ="float:right;"alt="">
+               <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/63c879e3c7f539bae7d030dd37904c70.svg" alt="banner img left">
+               <img class="mainPageBannerPhotos" src="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/53eb18f87274ca44645e2aa6ea0911f3.svg" style ="float:right; width:100%;"alt="banner img right">
                <h1>Connecting food to people world wide</h1>
                <div class="searchBarFood">
                   <input id="searchFood" name="searchBar" type="text" placeholder="Enter food" /><button class="homePageSearchButton" type="button">FIND FOOD</button>
