@@ -366,20 +366,21 @@ css code is broken down into sections with further comments describing large sec
     margin: 0 auto;
     width: 50%;
     height: 20em;
-    background-color: rgb(97, 95, 95);
+    background-color: #4CAF50;
     }
     .aboutUsBannerHeadings{
     line-height: 6em;
     position: relative;
-    padding-top: 3em;
+    padding-top: 5em;
     text-align: center;
-    margin: 0px;
+    color: rgb(180, 0, 0);
     }
     /*main content on page*/
     .aboutUsContent > p{
     margin: 0;
+    text-align: justify;
     line-height: 1.5em;
-    padding-top: 1em;
+    padding: 1em 1em 0em;
     }
     .aboutUsContent{
     margin-top: 20em;
@@ -387,15 +388,21 @@ css code is broken down into sections with further comments describing large sec
     margin: 0 auto;
     width: 50%;
     height: auto;
-    background-color: rgb(199, 199, 199);
+    background-color: white;
     overflow:auto;
     }
     .aboutUsImage{
-    width: 50%;
+    width: 300px;
     height: auto;
     margin: 20px;
     float: left;
     }
+    /*background image for page*/
+    .aboutUsBackground {
+      background-image: url(../Images/aboutUsBackground.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
 /*Section 8 styling for food pages*/
   /* Create four equal columns that sit next to each other */
     .foodColumn {
