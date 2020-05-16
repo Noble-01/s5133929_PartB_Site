@@ -54,30 +54,26 @@
          //echo "Opened database successfully\n";
       }
       //query to check if customer already exists in the Customer table
-      $check = 'SELECT NAME FROM Customer WHERE NAME = "'.$customerContactName.'";';
+      $check = 'SELECT NAME FROM Customer WHERE NAME LIKE "'.$customerContactName.'";';
       $result = $db -> query($check);
       //if a record is returned then the customer must already be registered
       //update customers email in Customer table
       if ($result){
-      $sql = 'UPDATE Customer
-               SET EMAIL = "'.$contactEmail.'"
-               WHERE NAME = "'.$customerContactName.'";';
-      $db -> query($sql);
+         $sql = 'UPDATE Customer SET EMAIL = "'.$contactEmail.'" WHERE NAME LIKE "'.$customerContactName.'";';
+         $db -> query($sql);
       }
       //if customer is not in table then add his name and email to Customer table where name doesn't exist
-      else{
-         $sql =   'INSERT INTO Customer (NAME, EMAIL) 
-         SELECT * FROM (SELECT "'.$customerContactName.'", "'.$contactEmail.'") AS TEMP 
-         WHERE NOT EXISTS 
-         ( SELECT NAME FROM Customer WHERE NAME = "'.$customerContactName.'") 
-         LIMIT 1 ;';
-         $db->query($sql);
-      }
-      //insert question into table Question
-      $sql ='INSERT INTO Question (SUBJECT, QUESTIONDESCRIPTION, CID) VALUES ("'.$subject.'", "'.$questionDescription.'",  (SELECT CID FROM Customer WHERE NAME = "'.$customerContactName.'"));';
-      $db->query($sql);
+      //if record already exists this sql statment does replaces nothing
+      $sql =   'INSERT INTO Customer (NAME, EMAIL) 
+      SELECT * FROM (SELECT "'.$customerContactName.'", "'.$contactEmail.'") AS TEMP 	       
+      WHERE NOT EXISTS 	         
+      ( SELECT NAME FROM Customer WHERE NAME = "'.$customerContactName.'") 
+      LIMIT 1 ;';
+      $db -> query($sql);
 
-     
+      //insert question into table Question
+      $sql ='INSERT INTO Question (SUBJECT, QUESTIONDESCRIPTION, CID) VALUES ("'.$subject.'", "'.$questionDescription.'",  (SELECT CID FROM Customer WHERE NAME LIKE "'.$customerContactName.'"));';
+      $db->query($sql);
    }
    
    //function retrieves 4 random records from Post table for the index.php
@@ -96,6 +92,7 @@
       } else {
          //return all records from Post
          //shouldn't really do this but just in case
+         //executed only if something goes wrong when executing function
          $sql ='SELECT * from Post;';
       }
       //retrieve returned results
@@ -117,5 +114,39 @@
          return $array;
       }
    }
-      
+   function getQuestions($searchTerm = null){
+      $db = new MyDB();
+      $array = [];
+      if(!$db){
+         echo '<script type="text/javascript">alert("'.$db->lastErrorMsg().'");</script>';
+      } else {
+         //echo "Opened database successfully\n";
+      }
+      //if user doesn't search for name reutrn all questions back
+      if (!$searchTerm) {
+         $sql = 'SELECT * FROM Question Q, Customer C WHERE C.CID = Q.CID';
+      }
+      //search for questions posted by user's name
+      else{
+         $sql = 'SELECT * FROM Question Q, Customer C WHERE C.CID = Q.CID AND NAME LIKE "'.$searchTerm.'"';
+      }
+       //retrieve returned results
+       $ret = $db->query($sql);
+     
+       //if no results are returned display error message
+       if(!$ret){
+         echo $db->lastErrorMsg();
+         //return empty array
+         return [];
+       } else {
+          //let returned records be placed into an array
+          while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
+             $array[] = $row;
+          }
+          //close database
+          $db->close();
+          //return array with 4 posts
+          return $array;
+       }
+   }
 ?>

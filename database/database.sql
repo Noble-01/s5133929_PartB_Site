@@ -13,8 +13,7 @@ CREATE TABLE Customer
 
 INSERT INTO Customer  VALUES
 (1, 'Allan McGregor', 'Allan@gmail.com'),
-(2, 'XRay Zulu', 'XZ@gmail.com')
-;
+(2, 'XRay Zulu', 'XZ@gmail.com');
 
 CREATE TABLE Post
 (
