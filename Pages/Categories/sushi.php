@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<!-- the styling/layout for this page is the same in every other page in the "Categories" sub folder wiht just changes to what the query is returning-->
 <?php
+//request the php file to execute php queries
    require_once '..\..\PHP\categoryQueries.php';
    $request = 'sushi';
+   //return records from table Post that have the category 'sushi'
    $posts = getPosts($request);
 ?>
 <html>
    <head>
       <meta charset="utf-8">
-      <!-- Boostrap -->
+      <!-- link style sheets -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="..\..\StyleSheet\styles.css">
@@ -38,17 +41,21 @@
             </ul>
       
       </header>
+      <!-- main page content -->
       <div class="container">
          <div class="main">
             <div class = "foodCards">
+               <!-- print all posts retrieved in cards -->
             <?php foreach ($posts as $post) :?>
             <div class="card">
             
-            <?php 
+            <?php
+            //give default image if there is no encoded image in table for record
             if ($post['IMAGE'] == ''){
                echo '<img width = "100%" alt = "default image" src = "..\..\Images\steakFood.jpg">';
             }
             else{
+               //decode image
                echo '<img width = "100%" alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
             }
             ?>
@@ -62,6 +69,7 @@
                         </td>
                         <td style="width:70%;">
                            <?php
+                              //for loop stars based on the numer for rating
                               for($x=1;$x<= intval($post['RATING']);$x++) {
                                  echo '<img src = ..\..\Images\filledStar.png width = 20% >';
                               }
@@ -76,6 +84,7 @@
             </div>
          </div>
       </div>
+      <!-- footer -->
       <footer>
          <div class="row">
             <div class="centerColumn">

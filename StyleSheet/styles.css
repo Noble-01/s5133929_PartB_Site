@@ -70,7 +70,7 @@ css code is broken down into sections with further comments describing large sec
       left:40%;
       font-weight: bold;
     }
-/* Section 2 styling for home page*/
+/* Section 2 styling for index page*/
     /* banner */
     .mainPageBanner{
       overflow: hidden;
@@ -91,8 +91,6 @@ css code is broken down into sections with further comments describing large sec
 
     .mainPageBannerPhotos {
       z-index: -1;
-      bottom: 0;
-      left: 0;
       position: absolute;
       height: 100%;
     }
@@ -124,7 +122,7 @@ css code is broken down into sections with further comments describing large sec
       margin: auto;
     }
     
-    /* The dots/bullets/indicators */
+    /* dots underneath slideshow*/
     .dot {
       height: 15px;
       width: 15px;
