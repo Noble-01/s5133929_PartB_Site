@@ -23,7 +23,8 @@ class MyDB extends SQLite3
          $sql ='SELECT * from Post;';
       } else {
          //return records from table Post with the same category of the page e.g. Pizza, Sushi, Steak, Enchilada
-         $sql ='SELECT * FROM Post WHERE CATEGORY LIKE "'.$searchTerm.'"';
+         //also return the cutomer name and email that sent in the post
+         $sql ='SELECT * FROM Post P, Customer C WHERE CATEGORY LIKE "'.$searchTerm.'" AND C.CID == P.CID';
       }
       //retrieve returned results
       $ret = $db->query($sql);

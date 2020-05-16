@@ -91,7 +91,7 @@
       }
       //return 4 random records from Post
       if(!$searchTerm) {
-         $sql ='SELECT * FROM Post ORDER BY RANDOM() LIMIT 4';
+         $sql ='SELECT * FROM Post P, Customer C WHERE C.CID == P.CID ORDER BY RANDOM() LIMIT 4';
 
       } else {
          //return all records from Post

@@ -70,9 +70,19 @@
                         </td>
                      </tr>
                   </table>
-                  <p><?php echo $post['DISHDESCRIPTION'] ?></p> 
+                  <p><?php echo $post['DISHDESCRIPTION'] ?></p>
+                  
+
                </div>
-            </div>
+                  <div class = "postOwnerName">
+                  <p>Contact details</p>
+                  <p><?php echo $post['NAME'] ?></p>
+               </div>
+               <br>
+               <div class = "postOwnerEmail">
+                  <p><?php echo $post['EMAIL'] ?></p>
+               </div>
+            </div> 
             <?php endforeach; ?>
             </div>
          </div>

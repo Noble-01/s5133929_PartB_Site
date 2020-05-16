@@ -433,13 +433,14 @@ css code is broken down into sections with further comments describing large sec
 /* Section 9 styling for category pages */
     /*cards are used to present posts*/
     .card {
-      overflow-x: auto;
+    position: relative;
+    overflow-x: auto;
     margin-left: 1em;
     margin-right: 1em;
     margin-top: 5em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    max-width: 20%;
+    width: 20%;
     }
     /*create shadow behind card when mouse hovers over*/
     .card:hover {
@@ -447,7 +448,7 @@ css code is broken down into sections with further comments describing large sec
     }
     /*spacing around text in card*/
     .cardContainer {
-    padding: 2px 16px;
+    padding: 2px 16px 2em;
     }
     /*display cards in a line and space evenly*/
     .foodCards{
@@ -463,4 +464,20 @@ css code is broken down into sections with further comments describing large sec
     }
     .card > a:visited{
       color: black;
+    }
+
+    .postOwnerName{
+      line-height: 0.5;
+      font-size: 0.8em;
+      position:absolute;
+      bottom:1.5em;
+      right:0;
+      color: blue;
+    }
+    .postOwnerEmail{
+      font-size: 0.8em;
+      position:absolute;
+      bottom:0;
+      right:0;
+      color: blue;
     }

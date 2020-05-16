@@ -118,6 +118,14 @@
                            </table>
                            
                         </div>
+                        <div class = "postOwnerName">
+                  <p>Contact details</p>
+                  <p><?php echo $post['NAME'] ?></p>
+               </div>
+               <br>
+               <div class = "postOwnerEmail">
+                  <p><?php echo $post['EMAIL'] ?></p>
+               </div>
                                     </a>
                   </div>
                   <?php endforeach; ?>
