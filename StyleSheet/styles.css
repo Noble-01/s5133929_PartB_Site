@@ -366,7 +366,7 @@ css code is broken down into sections with further comments describing large sec
     margin: 0 auto;
     width: 50%;
     height: 20em;
-    background-color: #4CAF50;
+    background-color: rgb(255, 255, 255);
     }
     .aboutUsBannerHeadings{
     line-height: 6em;
