@@ -115,10 +115,10 @@
                <h3 >Support</h3>
                <ul class="list-unstyled">
                   <li>	
-                     <a href="#!">Contact US</a>	
+                     <a href="contactUs.php">Contact US</a>	
                   </li>
                   <li>	
-                     <a href="#!">About US</a>	
+                     <a href="aboutUs.html">About US</a>	
                   </li>
                </ul>
             </div>
