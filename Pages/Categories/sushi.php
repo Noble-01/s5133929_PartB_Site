@@ -58,6 +58,10 @@
                </form>
             </div>
             <div class = "foodCards">
+               <!--if user searches for post that doesn't have the same category as the page then it prints the following message-->
+               <?php if(count($posts) == 0){
+                  echo"Not posts meet your desired search";
+               }?>
                <!-- print all posts retrieved in cards -->
                <?php foreach ($posts as $post) :?>
                <div class="card">

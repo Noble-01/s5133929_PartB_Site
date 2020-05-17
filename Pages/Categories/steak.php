@@ -56,6 +56,9 @@
                </form>
             </div>
             <div class = "foodCards">
+               <?php if(count($posts) == 0){
+                  echo"Not posts meet your desired search";
+               }?>
                <?php foreach ($posts as $post) :?>
                <div class="card">
                   <?php 
