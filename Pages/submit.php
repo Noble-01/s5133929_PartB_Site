@@ -27,7 +27,7 @@
          else{
             $file = '';
          }
-         $rating = $_POST['testRating'];
+         $rating = $_POST['rating'];
          /**
           * func adds post to db
           * -Parameter $customerName: name of customer posting
@@ -91,7 +91,7 @@
                      <label>Location</label>
                      <input   type="text" name="location" id = "location" placeholder="suburb, state, address, store.." required/>
                      <label for ="submitCategory">Category</label>
-                     <select id = "submitCategory" name = "submitCategory" required>
+                     <select id = "submitCategory" name = "submitCategory">
                         <option value = "steak">Steak</option>
                         <option value = "sushi">Sushi</option>
                         <option value = "pizza">Pizza</option>
@@ -102,7 +102,7 @@
                      <div class="row">
                         <br>
                         <label for = "rating">Rating of dish:</label>
-                        <div class="stars" id = "rating" name = "rating" data-rating="1">
+                        <div class="stars" data-rating="1">
                            <span  class="star">&nbsp;</span>
                            <span  class="star">&nbsp;</span>
                            <span  class="star">&nbsp;</span>
@@ -111,7 +111,7 @@
                         </div>
                      </div>
                      <!-- hidden input for holding the value for rating-->
-                     <input type="hidden" id="testRating" name="testRating" value="">
+                     <input type="hidden" id="rating" name="rating" value="">
                      <br>
                      <label for = "customerName">Name</label>
                      <input   type="text" name="customerName" id = "customerName" placeholder="Full Name..." required/>
@@ -201,9 +201,9 @@
                 });
                 document.querySelector('.stars').setAttribute('data-rating', num);
             }
-            //func sets the element id testRating with the value of the submited rating for the food
+            //func sets the element id rating which is the hidden input with the value of the submited rating for the food
             function setValue(){
-               document.submitForm.testRating.value = rating;
+               document.submitForm.rating.value = rating;
             }
    
          
