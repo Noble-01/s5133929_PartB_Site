@@ -26,7 +26,7 @@ class MyDB extends SQLite3
 
       } else {
          //if dish name has been searched then retrieve the dish
-         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND C.CID == P.CID';
+         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND CATEGORY LIKE "sushi" AND C.CID == P.CID';
 
       }
       //retrieve returned results
@@ -65,7 +65,7 @@ class MyDB extends SQLite3
 
       } else {
          //if dish name has been searched then retrieve the dish
-         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND C.CID == P.CID';
+         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND CATEGORY LIKE "pizza" AND C.CID == P.CID';
 
       }
       //retrieve returned results
@@ -104,7 +104,7 @@ class MyDB extends SQLite3
 
       } else {
          //if dish name has been searched then retrieve the dish
-         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND C.CID == P.CID';
+         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND CATEGORY LIKE "steak" AND C.CID == P.CID';
 
       }
       //retrieve returned results
@@ -143,7 +143,7 @@ class MyDB extends SQLite3
 
       } else {
          //if dish name has been searched then retrieve the dish
-         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND C.CID == P.CID';
+         $sql ='SELECT * from Post P, Customer C WHERE DISHNAME LIKE "%'.$searchTerm.'%" AND CATEGORY LIKE "enchilada" AND C.CID == P.CID';
 
       }
       //retrieve returned results
