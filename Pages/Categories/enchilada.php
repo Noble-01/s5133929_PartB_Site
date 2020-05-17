@@ -50,7 +50,7 @@
          <div class="main">
             <div class ="centerColumn">
                <form method = "GET" action = "" class = "questionForm">
-                  <input  type="text" name = "foodName" id = "foodName">
+                  <input  type="text" name = "foodName" id = "foodName" placeholder = "Search up dish name">
                   <input style="margin-left:10px;" type="submit" value="Search food name">
                </form>
             </div>
