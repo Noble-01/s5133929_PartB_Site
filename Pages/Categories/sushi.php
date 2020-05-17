@@ -52,6 +52,7 @@
          <div class="main">
             <h1 style = "text-align:center;">Sushi posts</h1>
             <div class ="centerColumn">
+               <!-- Form to search up posts on page by the dish name -->
                <form method = "GET" action = "" class = "questionForm">
                   <input  type="text" name = "foodName" id = "foodName" placeholder = "Search up dish name">
                   <input style="margin-left:10px;" type="submit" value="Search food name">
@@ -85,7 +86,7 @@
                            </td>
                            <td style="width:70%;">
                               <?php
-                                 //for loop stars based on the numer for rating
+                                 //for loop stars based on the number for rating
                                  for($x=1;$x<= intval($post['RATING']);$x++) {
                                     echo '<img src = ..\..\Images\filledStar.png width = 20% >';
                                  }
@@ -95,6 +96,7 @@
                      </table>
                      <p><?php echo $post['DISHDESCRIPTION'] ?></p>
                   </div>
+                  <!-- details of user who sent in post -->
                   <div class = "postOwnerName">
                      <p>Contact details</p>
                      <p><?php echo $post['NAME'] ?></p>

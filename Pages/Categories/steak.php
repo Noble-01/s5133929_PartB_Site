@@ -15,7 +15,7 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <!-- Boostrap -->
+      <!-- link style sheets  -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" type="text/css" href="..\..\StyleSheet\styles.css">
@@ -46,26 +46,32 @@
             </ul>
          </nav>
       </header>
+       <!-- main page content -->
       <div class="container">
          <div class="main">
             <h1 style = "text-align:center;">Steak posts</h1>
             <div class ="centerColumn">
+               <!-- Form to search up posts on page by the dish name -->
                <form method = "GET" action = "" class = "questionForm">
                   <input  type="text" name = "foodName" id = "foodName" placeholder = "Search up dish name">
                   <input style="margin-left:10px;" type="submit" value="Search food name">
                </form>
             </div>
             <div class = "foodCards">
+               <!--if user searches for post that doesn't have the same category as the page then it prints the following message-->
                <?php if(count($posts) == 0){
                   echo"Not posts meet your desired search";
                }?>
+                <!-- print all posts retrieved in cards -->
                <?php foreach ($posts as $post) :?>
                <div class="card">
                   <?php 
+                  //give default image if there is no encoded image in table for record
                      if ($post['IMAGE'] == ''){
                         echo '<img width = "100%" alt = "default image" src = "..\..\Images\steakFood.jpg">';
                      }
                      else{
+                        //decode image
                         echo '<img width = "100%"  alt= "image for post" src="data:image;base64, '.$post['IMAGE'].'"/>';
                      }
                      ?>
@@ -79,6 +85,7 @@
                            </td>
                            <td style="width:70%;">
                               <?php
+                              //for loop stars based on the number for rating
                                  for($x=1;$x<= intval($post['RATING']);$x++) {
                                     echo '<img src = ..\..\Images\filledStar.png width = 20% >';
                                  }
@@ -88,6 +95,7 @@
                      </table>
                      <p><?php echo $post['DISHDESCRIPTION'] ?></p>
                   </div>
+                  <!-- details of user who sent in post -->
                   <div class = "postOwnerName">
                      <p>Contact details</p>
                      <p><?php echo $post['NAME'] ?></p>
@@ -101,6 +109,7 @@
             </div>
          </div>
       </div>
+      <!-- footer -->
       <footer>
          <div class="row">
             <div class="centerColumn">
