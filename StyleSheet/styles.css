@@ -70,6 +70,12 @@ css code is broken down into sections with further comments describing large sec
       left:40%;
       font-weight: bold;
     }
+    /*form used to search certain things up such as dishes or questions*/
+    .questionForm{
+      display:flex;
+      width:30%;
+      align-content:space-between;
+   }
 /* Section 2 styling for index page*/
     /* banner */
     .mainPageBanner{

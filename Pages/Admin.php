@@ -23,11 +23,6 @@
             border: 1px solid #ddd;
             padding: 8px;
          }
-         .questionForm{
-            display:flex;
-            width:30%;
-            align-content:space-between;
-         }
       </style>
    </head>
    <body>
