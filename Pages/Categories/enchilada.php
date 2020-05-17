@@ -48,6 +48,7 @@
       </header>
       <div class="container">
          <div class="main">
+            <h1 style = "text-align:center;">Enchilada posts</h1>
             <div class ="centerColumn">
                <form method = "GET" action = "" class = "questionForm">
                   <input  type="text" name = "foodName" id = "foodName" placeholder = "Search up dish name">
