@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <?php
+   //request the php file to execute php queries
    require_once '..\..\PHP\categoryQueries.php';
-   $request = 'steak';
-   $posts = getPosts($request);
+   //check if user has searched up a dish name
+   if (isset($_GET['foodName'])){
+      $request = $_GET['foodName'];
+      $posts = getSteakPosts($request);
+   }
+   else{
+      //return all records from table Post that have the category 'steak'
+      $posts = getSteakPosts();
+   }
    ?>
 <html>
    <head>
@@ -40,6 +48,12 @@
       </header>
       <div class="container">
          <div class="main">
+            <div class ="centerColumn">
+               <form method = "GET" action = "" class = "questionForm">
+                  <input  type="text" name = "foodName" id = "foodName">
+                  <input style="margin-left:10px;" type="submit" value="Search food name">
+               </form>
+            </div>
             <div class = "foodCards">
                <?php foreach ($posts as $post) :?>
                <div class="card">
