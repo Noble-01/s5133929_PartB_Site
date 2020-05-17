@@ -31,9 +31,10 @@ CREATE TABLE Post
 
 INSERT INTO Post VALUES
 (1,'steak n fires', 'Gold Coast','steak', '', 3, 'good steak with nice sauce', 1),
-(2,'Nigiri','Cheeky Moneky, Brisbane' ,'Sushi', '', 4, 'fish was fresh', 2),
+(2,'Sushi','Cheeky Moneky, Brisbane' ,'Sushi', '', 4, 'fish was fresh', 2),
 (3,'deep fry pizza','Joes Pizza, Brisbane' ,'Pizza', '', 5, 'Simply awesome and tasty', 3),
-(4,'Nigiri','Cheeky Moneky, Brisbane' ,'Sushi', '', 4, 'fish was fresh', 1);
+(4,'Nigiri','Cheeky Moneky, Brisbane' ,'Sushi', '', 4, 'fish was fresh and rice was bouncey', 1),
+(5,'Sushi','Down Town Mexico, Sydney' ,'Sushi', '', 2, 'the tastes was good but way to much oil ', 2);
 
 CREATE TABLE Question
 (
