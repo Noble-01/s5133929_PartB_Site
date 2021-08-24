@@ -1,6 +1,7 @@
 Individual Assignment
 ---
 **Introduction**
+
 In assignment 2, we will create a food ordering portal (e.g. Menulog, Deliveroo, Uber Eats). With this
 portal, restaurants can list the dishes they want to sell. Customers can order selected dishes.
 ---
