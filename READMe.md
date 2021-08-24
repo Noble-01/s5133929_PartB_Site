@@ -68,14 +68,14 @@ seed the users, restaurants, and dishes so you can implement other functionaliti
 ---
 **Technical requirements**
 
-• Use Laravel’s migration for database table creation.
-• Use Laravel’s seeder to insert default test data into the database. There should be enough
+- Use Laravel’s migration for database table creation.
+- Use Laravel’s seeder to insert default test data into the database. There should be enough
 initial data to thoroughly test the retrieval, update, and deletion functionalities you have
 implemented.
-• Use Laravel’s ORM/Eloquent to perform database operations. Only partial mark will be
+- Use Laravel’s ORM/Eloquent to perform database operations. Only partial mark will be
 awarded for implementations using SQL or query builder.
-• Proper security measures must be implemented.
-• Good coding practice is expected. This includes:
+- Proper security measures must be implemented.
+- Good coding practice is expected. This includes:
 - Naming: using consistent, readable, and descriptive names for files, functions, variables etc.
 - Readability: correct indenting/spacing of code.
 - Commenting: there should at least be a short description for each function.
