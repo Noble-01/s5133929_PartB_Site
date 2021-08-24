@@ -6,6 +6,7 @@ In assignment 2, we will create a food ordering portal (e.g. Menulog, Deliveroo,
 portal, restaurants can list the dishes they want to sell. Customers can order selected dishes.
 ---
 **Details**
+
 Your implementation must use Laravel’s migrations, seeders, models, ORM/Eloquent, route,
 controllers, validator, and view/blade. You have some freedom in designing your website, however, it
 must satisfy the following requirements:
