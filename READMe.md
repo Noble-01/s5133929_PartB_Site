@@ -34,6 +34,7 @@ The above are the basic requirements, which if implemented well should allow a s
 pass level mark. The following are the more advanced requirements. We recommend students first
 complete the basic requirements (make a backup copy of your assignment) before attempting the
 more advanced requirements:
+
 8. After user registration, login, or logout, appropriate redirections should be provided. E.g. if
 user logs in from the details page, then after user logs in, s/he should be redirected back to that
 page.
