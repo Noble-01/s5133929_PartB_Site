@@ -63,8 +63,10 @@ input validation should NOT be implemented so we can test your server-side valid
 
 Hint: If you are not able to properly implement user registration of different user types, you can still
 seed the users, restaurants, and dishes so you can implement other functionalities.
+
 ---
 **Technical requirements**
+
 • Use Laravel’s migration for database table creation.
 • Use Laravel’s seeder to insert default test data into the database. There should be enough
 initial data to thoroughly test the retrieval, update, and deletion functionalities you have
